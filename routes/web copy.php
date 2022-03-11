@@ -41,7 +41,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('user', [AuthController::class, 'user']);
 
   // Main Page Route
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+    // Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
+    Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboardecommerce');
 });
 
 

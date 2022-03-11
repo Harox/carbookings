@@ -86,9 +86,13 @@
     <li class="nav-item dropdown dropdown-language">
       <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
         <i class="flag-icon flag-icon-us"></i>
-        <span class="selected-language">English</span>
+        <span class="selected-language">Portuguese</span>
       </a>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+        
+        <a class="dropdown-item" href="{{ url('lang/pt') }}" data-language="pt">
+          <i class="flag-icon flag-icon-pt"></i> Portuguese
+        </a>
         <a class="dropdown-item" href="{{ url('lang/en') }}" data-language="en">
           <i class="flag-icon flag-icon-us"></i> English
         </a>
@@ -97,9 +101,6 @@
         </a>
         <a class="dropdown-item" href="{{ url('lang/de') }}" data-language="de">
           <i class="flag-icon flag-icon-de"></i> German
-        </a>
-        <a class="dropdown-item" href="{{ url('lang/pt') }}" data-language="pt">
-          <i class="flag-icon flag-icon-pt"></i> Portuguese
         </a>
       </div>
     </li>
@@ -368,7 +369,7 @@
         @if (Auth::check())
           <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="me-50" data-feather="power"></i> Logout
+            <i class="me-50" data-feather="power"></i> Sair
           </a>
           <form method="POST" id="logout-form" action="{{ route('logout') }}">
             @csrf

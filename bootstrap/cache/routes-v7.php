@@ -304,7 +304,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::VN5DLnSlysFkkA5H',
+            '_route' => 'generated::x7CvNyc4lLI88FFN',
           ),
           1 => NULL,
           2 => 
@@ -324,7 +324,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'dashboard-ecommerce',
+            '_route' => 'dashboard',
           ),
           1 => NULL,
           2 => 
@@ -1148,7 +1148,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::VN5DLnSlysFkkA5H' => 
+    'generated::x7CvNyc4lLI88FFN' => 
     array (
       'methods' => 
       array (
@@ -1170,7 +1170,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::VN5DLnSlysFkkA5H',
+        'as' => 'generated::x7CvNyc4lLI88FFN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1186,7 +1186,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'dashboard-ecommerce' => 
+    'dashboard' => 
     array (
       'methods' => 
       array (
@@ -1201,14 +1201,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\DashboardController@dashboardEcommerce',
-        'controller' => 'App\\Http\\Controllers\\DashboardController@dashboardEcommerce',
+        'uses' => 'App\\Http\\Controllers\\DashboardController@dashboard',
+        'controller' => 'App\\Http\\Controllers\\DashboardController@dashboard',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'dashboard-ecommerce',
+        'as' => 'dashboard',
       ),
       'fallback' => false,
       'defaults' => 
