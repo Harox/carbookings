@@ -37,7 +37,7 @@ Route::post('register', [AuthController::class, 'register'])->name('register');
 
 //Admin Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-//   Route::get('logout', [AuthController::class, 'logout'])->name('logout');;
+  Route::get('logout', [AuthController::class, 'logout'])->name('logout');
   Route::get('user', [AuthController::class, 'user']);
 
   // Main Page Route
