@@ -1,30 +1,70 @@
 {
   "menu": [
     {
-      "name": "Dashboards",
-      "badge": "2",
-      "badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1",
+      "name": "Dashboard",
       "icon": "home",
-      "slug": "",
-      "submenu": [
-        {
-          "url": "dashboard/analytics",
-          "name": "Analytics",
-          "icon": "circle",
-          "slug": "dashboard-analytics"
-        },
-        {
-          "url": "/",
-          "name": "eCommerce",
-          "icon": "circle",
-          "slug": "dashboard-ecommerce"
-        }
-      ]
+      "url": "/admin",
+      "slug": "dashboard"
     },
 
     {
       "navheader": "Apps & Pages",
       "slug": ""
+    },
+    {
+      "name": "Bookings",
+      "icon": "user",
+      "url": "admin/bookings/list",
+      "slug": "booking-list"
+    },
+    {
+      "name": "Quote",
+      "icon": "file-text",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "admin/quote/list",
+          "name": "List",
+          "icon": "circle",
+          "slug": "quote-list"
+        },
+        {
+          "url": "admin/quote/preview",
+          "name": "Preview",
+          "icon": "circle",
+          "slug": "quote-preview"
+        },
+        {
+          "url": "admin/quote/edit",
+          "name": "Edit",
+          "icon": "circle",
+          "slug": "quote-edit"
+        },
+        {
+          "url": "admin/quote/add",
+          "name": "Add",
+          "icon": "circle",
+          "slug": "quote-add"
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "icon": "user",
+      "url": "admin/customers/list",
+      "slug": "customers-list"
+    },
+    {
+      "name": "Users",
+      "icon": "user",
+      "url": "admin/user/list",
+      "slug": "app-user-list"
+    },
+    {
+      "name": "Cars",
+      "icon": "user",
+      "url": "admin/cars/list",
+      "slug": "cars-list"
     },
     {
       "url": "app/email",
@@ -99,10 +139,10 @@
       "slug": "",
       "submenu": [
         {
-          "url": "app/access-roles",
+          "url": "admin/accessroles",
           "name": "Roles",
           "icon": "circle",
-          "slug": "app-access-roles"
+          "slug": "access-roles"
         },
         {
           "url": "app/access-permission",
@@ -149,7 +189,7 @@
       "slug": "",
       "submenu": [
         {
-          "url": "app/user/list",
+          "url": "admin/user/list",
           "name": "List",
           "icon": "circle",
           "slug": "app-user-list"
@@ -160,27 +200,27 @@
           "slug": "",
           "submenu": [
             {
-              "url": "app/user/view/account",
+              "url": "admin/user/view/account",
               "name": "Account",
               "slug": "app-user-view-account"
             },
             {
-              "url": "app/user/view/security",
+              "url": "admin/user/view/security",
               "name": "Security",
               "slug": "app-user-view-security"
             },
             {
-              "url": "app/user/view/billing",
+              "url": "admin/user/view/billing",
               "name": "Billings & Plans",
               "slug": "app-user-view-billing"
             },
             {
-              "url": "app/user/view/notifications",
+              "url": "admin/user/view/notifications",
               "name": "Notifications",
               "slug": "app-user-view-notifications"
             },
             {
-              "url": "app/user/view/connections",
+              "url": "admin/user/view/connections",
               "name": "Connections",
               "slug": "app-user-view-connections"
             }

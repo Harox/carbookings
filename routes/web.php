@@ -16,6 +16,10 @@ use App\Http\Controllers\PageLayoutController;
 use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\UserInterfaceController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BookingCOntroller;
+use App\Http\Controllers\CarsController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\QuoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +46,40 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
   // Main Page Route
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    //Permissions
+    Route::get('accessroles', [AppsController::class, 'access_roles'])->name('accessroles');
+    Route::get('access-permission', [AppsController::class, 'access_permission'])->name('accesspermission');
+
+    //Users
+    Route::get('user/list', [AppsController::class, 'user_list'])->name('app-user-list');
+    Route::get('user/view/account', [AppsController::class, 'user_view_account'])->name('app-user-view-account');
+    Route::get('user/view/security', [AppsController::class, 'user_view_security'])->name('app-user-view-security');
+    Route::get('user/view/billing', [AppsController::class, 'user_view_billing'])->name('app-user-view-billing');
+    Route::get('user/view/notifications', [AppsController::class, 'user_view_notifications'])->name('app-user-view-notifications');
+    Route::get('user/view/connections', [AppsController::class, 'user_view_connections'])->name('app-user-view-connections');
+
+    //Customers Routes
+    Route::get('bookings/list', [BookingCOntroller::class, 'booking_list'])->name('booking-list');
+
+    //Cars Routes
+    Route::get('cars/list', [CarsController::class, 'cars_list'])->name('cars-list');
+
+
+    //Customers Routes
+    Route::get('customers/list', [CustomerController::class, 'customers_list'])->name('customers-list');
+
+
+    //Quote Routes
+    Route::get('quote/list', [QuoteController::class, 'quote_list'])->name('quote-list');
+    Route::get('quote/preview', [QuoteController::class, 'quote_preview'])->name('quote-preview');
+    Route::get('quote/edit', [QuoteController::class, 'quote_edit'])->name('quote-edit');
+    Route::get('quote/add', [QuoteController::class, 'quote_add'])->name('quote-add');
+    Route::get('quote/print', [QuoteController::class, 'quote_print'])->name('quote-print');
+
+
+    //Language Routes
+    Route::get('lang/{locale}', [LanguageController::class, 'swap'])->name('changelanguage');
 });
 
 
@@ -59,11 +97,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 //     Route::get('todo', [AppsController::class, 'todoApp'])->name('app-todo');
 //     Route::get('calendar', [AppsController::class, 'calendarApp'])->name('app-calendar');
 //     Route::get('kanban', [AppsController::class, 'kanbanApp'])->name('app-kanban');
-//     Route::get('invoice/list', [AppsController::class, 'invoice_list'])->name('app-invoice-list');
-//     Route::get('invoice/preview', [AppsController::class, 'invoice_preview'])->name('app-invoice-preview');
-//     Route::get('invoice/edit', [AppsController::class, 'invoice_edit'])->name('app-invoice-edit');
-//     Route::get('invoice/add', [AppsController::class, 'invoice_add'])->name('app-invoice-add');
-//     Route::get('invoice/print', [AppsController::class, 'invoice_print'])->name('app-invoice-print');
 //     Route::get('ecommerce/shop', [AppsController::class, 'ecommerce_shop'])->name('app-ecommerce-shop');
 //     Route::get('ecommerce/details', [AppsController::class, 'ecommerce_details'])->name('app-ecommerce-details');
 //     Route::get('ecommerce/wishlist', [AppsController::class, 'ecommerce_wishlist'])->name('app-ecommerce-wishlist');
@@ -250,5 +283,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 // // map leaflet
 // Route::get('/maps/leaflet', [ChartsController::class, 'maps_leaflet'])->name('map-leaflet');
 
-// // locale Route
-// Route::get('lang/{locale}', [LanguageController::class, 'swap']);
+

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AppsController extends Controller
-{ 
+class QuoteController extends Controller
+{
     // invoice list App
-    public function invoice_list()
+    public function quote_list()
     {
         $pageConfigs = ['pageHeader' => false];
 
@@ -15,7 +15,7 @@ class AppsController extends Controller
     }
 
     // invoice preview App
-    public function invoice_preview()
+    public function quote_preview()
     {
         $pageConfigs = ['pageHeader' => false];
 
@@ -23,7 +23,7 @@ class AppsController extends Controller
     }
 
     // invoice edit App
-    public function invoice_edit()
+    public function quote_edit()
     {
         $pageConfigs = ['pageHeader' => false];
 
@@ -31,7 +31,7 @@ class AppsController extends Controller
     }
 
     // invoice edit App
-    public function invoice_add()
+    public function quote_add()
     {
         $pageConfigs = ['pageHeader' => false];
 
@@ -39,7 +39,7 @@ class AppsController extends Controller
     }
 
     // invoice print App
-    public function invoice_print()
+    public function quote_print()
     {
         $pageConfigs = ['pageHeader' => false];
 
