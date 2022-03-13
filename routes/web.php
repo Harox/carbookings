@@ -23,6 +23,7 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,12 +56,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('access-permission', [AppsController::class, 'access_permission'])->name('accesspermission');
 
     //Users
-    Route::get('user/list', [AppsController::class, 'user_list'])->name('app-user-list');
-    Route::get('user/view/account', [AppsController::class, 'user_view_account'])->name('app-user-view-account');
-    Route::get('user/view/security', [AppsController::class, 'user_view_security'])->name('app-user-view-security');
-    Route::get('user/view/billing', [AppsController::class, 'user_view_billing'])->name('app-user-view-billing');
-    Route::get('user/view/notifications', [AppsController::class, 'user_view_notifications'])->name('app-user-view-notifications');
-    Route::get('user/view/connections', [AppsController::class, 'user_view_connections'])->name('app-user-view-connections');
+    Route::get('user/list', [UserController::class, 'user_list'])->name('app-user-list');
+    Route::get('user/view/account', [UserController::class, 'user_view_account'])->name('app-user-view-account');
+    Route::get('user/view/security', [UserController::class, 'user_view_security'])->name('app-user-view-security');
+    Route::get('user/view/billing', [UserController::class, 'user_view_billing'])->name('app-user-view-billing');
+    Route::get('user/view/notifications', [UserController::class, 'user_view_notifications'])->name('app-user-view-notifications');
+    Route::get('user/view/connections', [AppsCUserControllerontroller::class, 'user_view_connections'])->name('app-user-view-connections');
 
     //Customers Routes
     Route::get('bookings/list', [BookingCOntroller::class, 'booking_list'])->name('booking-list');

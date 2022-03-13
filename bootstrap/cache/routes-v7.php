@@ -304,7 +304,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::dKXoGDitvr464uk9',
+            '_route' => 'generated::nsGlN2bxYADr6mqE',
           ),
           1 => NULL,
           2 => 
@@ -1631,7 +1631,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::dKXoGDitvr464uk9' => 
+    'generated::nsGlN2bxYADr6mqE' => 
     array (
       'methods' => 
       array (
@@ -1653,7 +1653,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::dKXoGDitvr464uk9',
+        'as' => 'generated::nsGlN2bxYADr6mqE',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1798,8 +1798,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_list',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_list',
+        'uses' => 'App\\Http\\Controllers\\UserController@user_list',
+        'controller' => 'App\\Http\\Controllers\\UserController@user_list',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
@@ -1836,8 +1836,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_view_account',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_view_account',
+        'uses' => 'App\\Http\\Controllers\\UserController@user_view_account',
+        'controller' => 'App\\Http\\Controllers\\UserController@user_view_account',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
@@ -1874,8 +1874,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_view_security',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_view_security',
+        'uses' => 'App\\Http\\Controllers\\UserController@user_view_security',
+        'controller' => 'App\\Http\\Controllers\\UserController@user_view_security',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
@@ -1912,8 +1912,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_view_billing',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_view_billing',
+        'uses' => 'App\\Http\\Controllers\\UserController@user_view_billing',
+        'controller' => 'App\\Http\\Controllers\\UserController@user_view_billing',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
@@ -1950,8 +1950,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_view_notifications',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_view_notifications',
+        'uses' => 'App\\Http\\Controllers\\UserController@user_view_notifications',
+        'controller' => 'App\\Http\\Controllers\\UserController@user_view_notifications',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
@@ -1988,8 +1988,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\AppsController@user_view_connections',
-        'controller' => 'App\\Http\\Controllers\\AppsController@user_view_connections',
+        'uses' => 'AppsCUserControllerontroller@user_view_connections',
+        'controller' => 'AppsCUserControllerontroller@user_view_connections',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 

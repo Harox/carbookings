@@ -24,8 +24,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">21,459</h3>
-            <span>Total Users</span>
+            <h3 class="fw-bolder mb-75">459</h3>
+            <span>Total Reservas</span>
           </div>
           <div class="avatar bg-light-primary p-50">
             <span class="avatar-content">
@@ -39,8 +39,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">4,567</h3>
-            <span>Paid Users</span>
+            <h3 class="fw-bolder mb-75">7</h3>
+            <span>Pendentes</span>
           </div>
           <div class="avatar bg-light-danger p-50">
             <span class="avatar-content">
@@ -54,8 +54,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">19,860</h3>
-            <span>Active Users</span>
+            <h3 class="fw-bolder mb-75">60</h3>
+            <span>Confirmadas</span>
           </div>
           <div class="avatar bg-light-success p-50">
             <span class="avatar-content">
@@ -70,7 +70,7 @@
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
             <h3 class="fw-bolder mb-75">237</h3>
-            <span>Pending Users</span>
+            <span>Canceladas</span>
           </div>
           <div class="avatar bg-light-warning p-50">
             <span class="avatar-content">
@@ -84,7 +84,7 @@
   <!-- list and filter start -->
   <div class="card">
     <div class="card-body border-bottom">
-      <h4 class="card-title">Search & Filter</h4>
+      <h4 class="card-title">Pesquisar e filtrar</h4>
       <div class="row">
         <div class="col-md-4 user_role"></div>
         <div class="col-md-4 user_plan"></div>
@@ -96,12 +96,12 @@
         <thead class="table-light">
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Plan</th>
-            <th>Billing</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>Cliente</th>
+            <th>Viatura</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Estado</th>
+            <th>Acção</th>
           </tr>
         </thead>
       </table>
@@ -112,7 +112,7 @@
         <form class="add-new-user modal-content pt-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
           <div class="modal-header mb-1">
-            <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Nova Reserva</h5>
           </div>
           <div class="modal-body flex-grow-1">
             <div class="mb-1">
@@ -247,5 +247,5 @@
 
 @section('page-script')
   {{-- Page js files --}}
-  <script src="{{ asset(mix('js/scripts/pages/app-user-list.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/pages/app-booking-list.js')) }}"></script>
 @endsection
