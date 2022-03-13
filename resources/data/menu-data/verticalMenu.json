@@ -67,6 +67,24 @@
       "slug": "cars-list"
     },
     {
+      "name": "Transactions",
+      "icon": "user",
+      "url": "admin/transactions/list",
+      "slug": "transaction-list"
+    },
+    {
+      "name": "Reports",
+      "icon": "user",
+      "url": "admin/reports/list",
+      "slug": "report-list"
+    },
+    {
+      "name": "Settings",
+      "icon": "user",
+      "url": "admin/account-settings-account",
+      "slug": "cars-list"
+    },
+    {
       "url": "app/email",
       "name": "Email",
       "icon": "mail",

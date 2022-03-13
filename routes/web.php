@@ -20,6 +20,9 @@ use App\Http\Controllers\BookingCOntroller;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\ReportsController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\TransactionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +83,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     //Language Routes
     Route::get('lang/{locale}', [LanguageController::class, 'swap'])->name('changelanguage');
+
+
+    //Settings
+      Route::get('account-settings-account', [SettingsController::class, 'account_settings_account'])->name('account-settings-account');
+    Route::get('account-settings-security', [SettingsController::class, 'account_settings_security'])->name('account-settings-security');
+    Route::get('account-settings-billing', [SettingsController::class, 'account_settings_billing'])->name('account-settings-billing');
+    Route::get('account-settings-notifications', [SettingsController::class, 'account_settings_notifications'])->name('page-account-settings-notifications');
+    Route::get('account-settings-connections', [SettingsController::class, 'account_settings_connections'])->name('account-settings-connections');
+
+    //Transactions Routes
+    Route::get('transactions/list', [TransactionsController::class, 'transaction_list'])->name('transaction-list');
+
+    //Reports Routes
+    Route::get('reports/list', [ReportsController::class, 'report_list'])->name('report-list');
+
 });
 
 
