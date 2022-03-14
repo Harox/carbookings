@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "responsive_id": null,
+      "invoice_id": 5020,
+      "issued_date": "07/17/2019",
+      "client_name": "Mouzinho Zacarias",
+      "email": "roysoutherell@email.com",
+      "service": "UI/UX Design & Development",
+      "total": 5219,
+      "avatar": "",
+      "invoice_status": "Downloaded",
+      "balance": 0,
+      "due_date": "12/15/2019"
+    },
+    {
+      "responsive_id": null,
+      "invoice_id": 4506,
+      "issued_date": "10/19/2019",
+      "client_name": "Manuel Paunde",
+      "email": "brinyundrell@email.com",
+      "service": "Unlimited Extended License",
+      "total": 3719,
+      "avatar": "",
+      "invoice_status": "Paid",
+      "balance": 0,
+      "due_date": "11/03/2019"
+    },
+    {
+      "responsive_id": null,
+      "invoice_id": 4515,
+      "issued_date": "03/06/2020",
+      "client_name": "Armando Cossa",
+      "email": "kendelllongstreeth@email.com",
+      "service": "Software Development",
+      "total": 4749,
+      "avatar": "",
+      "invoice_status": "Sent",
+      "balance": 0,
+      "due_date": "02/11/2020"
+    },
+    {
+      "responsive_id": null,
+      "invoice_id": 4881,
+      "issued_date": "08/26/2019",
+      "client_name": "Fenias Zefenias",
+      "email": "zebkenningham@email.com",
+      "service": "UI/UX Design & Development",
+      "total": 2771,
+      "avatar": "",
+      "invoice_status": "Paid",
+      "balance": 0,
+      "due_date": "06/24/2019"
+    }
+  ]
+}

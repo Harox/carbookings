@@ -1,3 +1,12 @@
+/*=========================================================================================
+    File Name: app-user-list.js
+    Description: User List page
+    --------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+
+==========================================================================================*/
 $(function () {
   ('use strict');
 
@@ -7,9 +16,9 @@ $(function () {
     select = $('.select2'),
     dtContact = $('.dt-contact'),
     statusObj = {
-      1: { title: 'Pendente', class: 'badge-light-warning' },
-      2: { title: 'Confirmado', class: 'badge-light-success' },
-      3: { title: 'Cancelado', class: 'badge-light-secondary' }
+      1: { title: 'Pending', class: 'badge-light-warning' },
+      2: { title: 'Active', class: 'badge-light-success' },
+      3: { title: 'Inactive', class: 'badge-light-secondary' }
     };
 
   var assetPath = '../../../app-assets/',
@@ -35,12 +44,12 @@ $(function () {
   // Users List datatable
   if (dtUserTable.length) {
     dtUserTable.DataTable({
-      ajax: assetPath + 'data/booking-list.json', // JSON file to add data
+      ajax: assetPath + 'data/car-list.json', // JSON file to add data
       columns: [
         // columns according to JSON
         { data: '' },
         { data: 'full_name' },
-        { data: 'car' },
+        { data: 'role' },
         { data: 'current_plan' },
         { data: 'billing' },
         { data: 'status' },
@@ -108,7 +117,7 @@ $(function () {
           // User Role
           targets: 2,
           render: function (data, type, full, meta) {
-            var $role = full['car'];
+            var $role = full['role'];
             var roleBadgeObj = {
               Subscriber: feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary me-50' }),
               Author: feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning me-50' }),
@@ -180,12 +189,11 @@ $(function () {
         '>',
       language: {
         sLengthMenu: 'Show _MENU_',
-        search: 'Search',
+        search: 'Pesquisar',
         searchPlaceholder: 'Pesquisar..'
       },
       // Buttons with Dropdown
       buttons: [
-          
         {
           extend: 'collection',
           className: 'btn btn-outline-secondary dropdown-toggle me-2',
@@ -217,7 +225,7 @@ $(function () {
             },
             {
               extend: 'copy',
-              text: feather.icons['copy'].toSvg({ class: 'font-small-4 me-50' }) + 'Copiar',
+              text: feather.icons['copy'].toSvg({ class: 'font-small-4 me-50' }) + 'Copy',
               className: 'dropdown-item',
               exportOptions: { columns: [1, 2, 3, 4, 5] }
             }
@@ -231,7 +239,7 @@ $(function () {
           }
         },
         {
-          text: 'Nova reserva',
+          text: 'Adicionar Viatura',
           className: 'add-new btn btn-primary',
           attr: {
             'data-bs-toggle': 'modal',
@@ -287,9 +295,9 @@ $(function () {
           .columns(2)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserRole">Viatura</label>').appendTo('.user_role');
+            var label = $('<label class="form-label" for="UserRole">Marca</label>').appendTo('.user_role');
             var select = $(
-              '<select id="UserRole" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Data </option></select>'
+              '<select id="UserRole" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Selecione a marca </option></select>'
             )
               .appendTo('.user_role')
               .on('change', function () {
@@ -310,9 +318,9 @@ $(function () {
           .columns(3)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserPlan">Viatura</label>').appendTo('.user_plan');
+            var label = $('<label class="form-label" for="UserPlan">Modelo</label>').appendTo('.user_plan');
             var select = $(
-              '<select id="UserPlan" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Viatura </option></select>'
+              '<select id="UserPlan" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Selecione o modelo </option></select>'
             )
               .appendTo('.user_plan')
               .on('change', function () {
@@ -335,7 +343,7 @@ $(function () {
             var column = this;
             var label = $('<label class="form-label" for="FilterTransaction">Estado</label>').appendTo('.user_status');
             var select = $(
-              '<select id="FilterTransaction" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Estado </option></select>'
+              '<select id="FilterTransaction" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Selecione o estado </option></select>'
             )
               .appendTo('.user_status')
               .on('change', function () {
@@ -392,7 +400,7 @@ $(function () {
     dtContact.each(function () {
       new Cleave($(this), {
         phone: true,
-        phoneRegionCode: 'US'
+        phoneRegionCode: 'MZ'
       });
     });
   }

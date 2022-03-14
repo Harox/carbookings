@@ -8,12 +8,12 @@
     },
 
     {
-      "navheader": "Apps & Pages",
+      "navheader": "Menu",
       "slug": ""
     },
     {
       "name": "Bookings",
-      "icon": "user",
+      "icon": "star",
       "url": "admin/bookings/list",
       "slug": "booking-list"
     },
@@ -23,34 +23,28 @@
       "slug": "",
       "submenu": [
         {
-          "url": "admin/quote/list",
-          "name": "List",
-          "icon": "circle",
-          "slug": "quote-list"
-        },
-        {
-          "url": "admin/quote/preview",
-          "name": "Preview",
-          "icon": "circle",
-          "slug": "quote-preview"
-        },
-        {
-          "url": "admin/quote/edit",
-          "name": "Edit",
-          "icon": "circle",
-          "slug": "quote-edit"
-        },
-        {
           "url": "admin/quote/add",
-          "name": "Add",
+          "name": "create",
           "icon": "circle",
           "slug": "quote-add"
+        },
+        {
+          "url": "admin/quote/list",
+          "name": "Lista",
+          "icon": "circle",
+          "slug": "quote-list"
         }
       ]
     },
     {
+      "name": "Cars",
+      "icon": "truck",
+      "url": "admin/cars/list",
+      "slug": "cars-list"
+    },
+    {
       "name": "Customers",
-      "icon": "user",
+      "icon": "command",
       "url": "admin/customers/list",
       "slug": "customers-list"
     },
@@ -61,26 +55,20 @@
       "slug": "app-user-list"
     },
     {
-      "name": "Cars",
-      "icon": "user",
-      "url": "admin/cars/list",
-      "slug": "cars-list"
-    },
-    {
       "name": "Transactions",
-      "icon": "user",
+      "icon": "code",
       "url": "admin/transactions/list",
       "slug": "transaction-list"
     },
     {
       "name": "Reports",
-      "icon": "user",
+      "icon": "clipboard",
       "url": "admin/reports/list",
       "slug": "report-list"
     },
     {
       "name": "Settings",
-      "icon": "user",
+      "icon": "settings",
       "url": "admin/account-settings-account",
       "slug": "account-settings-account"
     }

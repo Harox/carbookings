@@ -3,35 +3,35 @@
     {
       "id": 1,
       "full_name": "Feliciano Cossa",
-      "role": "Honda Accord AAU 3443",
+      "car": "Honda Accord AAU 3443",
       "username": "gslixby0",
-      "email": "gslixby0@abc.net.au",
-      "current_plan": "Enterprise",
-      "billing": "Manual - Credit Card",
+      "email": "feliciano@gmail.com",
+      "current_plan": "4898.67",
+      "billing": "25/02/2022",
       "status": 3,
       "avatar": ""
     },
     {
       "id": 2,
       "full_name": "Heineken",
-      "role": "Toyota Coaster AAr 873",
+      "car": "Toyota Coaster AAr 873",
       "username": "hredmore1",
       "email": "hredmore1@imgur.com",
-      "current_plan": "Team",
-      "billing": "Manual - Paypal",
+      "current_plan": "7644.00",
+      "billing": "25/02/2022",
       "status": 1,
-      "avatar": "10.png"
+      "avatar": ""
     },
     {
       "id": 3,
       "full_name": "Mouzinho Zacarias",
-      "role": "Toyota Hiace AAY 322",
+      "car": "Toyota Hiace AAY 322",
       "username": "msicely2",
       "email": "msicely2@who.int",
-      "current_plan": "Enterprise",
-      "billing": "Auto Debit",
+      "current_plan": "3500.00",
+      "billing": "24/02/2022",
       "status": 2,
-      "avatar": "1.png"
+      "avatar": ""
     }
   ]
 }

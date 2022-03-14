@@ -9,11 +9,13 @@
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/responsive.bootstrap5.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/buttons.bootstrap5.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/rowGroup.bootstrap5.min.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
 @endsection
 
 @section('page-style')
   {{-- Page Css files --}}
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/pickers/form-flat-pickr.css')) }}">
 @endsection
 
 @section('content')
@@ -86,8 +88,8 @@
     <div class="card-body border-bottom">
       <h4 class="card-title">Pesquisar e filtrar</h4>
       <div class="row">
-        <div class="col-md-4 user_role"></div>
         <div class="col-md-4 user_plan"></div>
+        <div class="col-md-4 user_role"></div>
         <div class="col-md-4 user_status"></div>
       </div>
     </div>
@@ -116,23 +118,13 @@
           </div>
           <div class="modal-body flex-grow-1">
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+              <label class="form-label" for="basic-icon-default-fullname">Nome do Cliente</label>
               <input
                 type="text"
                 class="form-control dt-full-name"
                 id="basic-icon-default-fullname"
-                placeholder="John Doe"
+                placeholder="Nome Completo"
                 name="user-fullname"
-              />
-            </div>
-            <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-uname">Username</label>
-              <input
-                type="text"
-                id="basic-icon-default-uname"
-                class="form-control dt-uname"
-                placeholder="Web Developer"
-                name="user-name"
               />
             </div>
             <div class="mb-1">
@@ -141,80 +133,113 @@
                 type="text"
                 id="basic-icon-default-email"
                 class="form-control dt-email"
-                placeholder="john.doe@example.com"
+                placeholder="nome@dominio.co.mz"
                 name="user-email"
               />
             </div>
+
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-contact">Contact</label>
+              <label class="form-label" for="basic-icon-default-contact">Contacto</label>
               <input
                 type="text"
                 id="basic-icon-default-contact"
                 class="form-control dt-contact"
-                placeholder="+1 (609) 933-44-22"
+                placeholder="+258 (84) 0000000"
                 name="user-contact"
               />
             </div>
+
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-company">Company</label>
+              <label class="form-label" for="basic-icon-default-company">Empresa</label>
               <input
                 type="text"
                 id="basic-icon-default-company"
                 class="form-control dt-contact"
-                placeholder="PIXINVENT"
+                placeholder="Empresa"
                 name="user-company"
               />
             </div>
+
             <div class="mb-1">
-              <label class="form-label" for="country">Country</label>
+              <label class="form-label" for="country">Destino</label>
               <select id="country" class="select2 form-select">
-                <option value="Australia">USA</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Belarus">Belarus</option>
-                <option value="Brazil">Brazil</option>
-                <option value="Canada">Canada</option>
-                <option value="China">China</option>
-                <option value="France">France</option>
-                <option value="Germany">Germany</option>
-                <option value="India">India</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Israel">Israel</option>
-                <option value="Italy">Italy</option>
-                <option value="Japan">Japan</option>
-                <option value="Korea">Korea, Republic of</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Philippines">Philippines</option>
-                <option value="Russia">Russian Federation</option>
-                <option value="South Africa">South Africa</option>
-                <option value="Thailand">Thailand</option>
-                <option value="Turkey">Turkey</option>
-                <option value="Ukraine">Ukraine</option>
-                <option value="United Arab Emirates">United Arab Emirates</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="United States">United States</option>
+                <option value="1">Maputo</option>
+                <option value="2">Beira</option>
+                <option value="3">Inhambane</option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-1">
+              <label class="form-label" for="fp-range">Data</label>
+              <input
+                type="text"
+                id="fp-range"
+                class="form-control flatpickr-range"
+                placeholder="AAAA-MM-DD to AAAA-MM-DD"
+              />
+            </div>
+
+            <div class="mb-1">
+              <label class="form-label" for="basic-icon-default-uname">Descrição</label>
+              <input
+                type="text"
+                id="basic-icon-default-uname"
+                class="form-control dt-uname"
+                placeholder="Descrição da reserva"
+                name="user-name"
+              />
+            </div>
+            <div class="mb-1">
+              <label class="form-label" for="country">Nº Adultos</label>
+              <select id="country" class="select2 form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="3">9</option>
+                <option value="1">10</option>
               </select>
             </div>
             <div class="mb-1">
-              <label class="form-label" for="user-role">User Role</label>
-              <select id="user-role" class="select2 form-select">
-                <option value="subscriber">Subscriber</option>
-                <option value="editor">Editor</option>
-                <option value="maintainer">Maintainer</option>
-                <option value="author">Author</option>
-                <option value="admin">Admin</option>
+              <label class="form-label" for="country">Nº Crianças</label>
+              <select id="country" class="select2 form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="3">9</option>
+                <option value="1">10</option>
               </select>
             </div>
-            <div class="mb-2">
-              <label class="form-label" for="user-plan">Select Plan</label>
-              <select id="user-plan" class="select2 form-select">
-                <option value="basic">Basic</option>
-                <option value="enterprise">Enterprise</option>
-                <option value="company">Company</option>
-                <option value="team">Team</option>
+            
+            <div class="mb-1">
+              <label class="form-label" for="country">Viatura</label>
+              <select id="country" class="select2 form-select">
+                <option value="1">Honda Accord AAU 3443</option>
+                <option value="2">Toyota Coaster AAr 873</option>
+                <option value="3">Toyota Hiace AAY 322</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary me-1 data-submit">Submit</button>
-            <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <div class="mb-1">
+              <label class="form-label" for="basic-icon-default-company">Distancia</label>
+              <input
+                type="text"
+                id="basic-icon-default-company"
+                class="form-control dt-contact"
+                placeholder="00 km"
+                name="user-company"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary me-1 data-submit">Criar</button>
+            <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
           </div>
         </form>
       </div>
@@ -243,9 +268,17 @@
   <script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/forms/cleave/cleave.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/forms/cleave/addons/cleave-phone.us.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.date.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.time.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/pickadate/legacy.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
+
 @endsection
 
 @section('page-script')
   {{-- Page js files --}}
   <script src="{{ asset(mix('js/scripts/pages/app-booking-list.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/forms/pickers/form-pickers.js')) }}"></script>
 @endsection
+

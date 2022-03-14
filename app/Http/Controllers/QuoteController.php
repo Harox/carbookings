@@ -11,7 +11,7 @@ class QuoteController extends Controller
     {
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/apps/invoice/app-invoice-list', ['pageConfigs' => $pageConfigs]);
+        return view('/content/apps/quotation/quote-list', ['pageConfigs' => $pageConfigs]);
     }
 
     // invoice preview App
@@ -19,7 +19,7 @@ class QuoteController extends Controller
     {
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/apps/invoice/app-invoice-preview', ['pageConfigs' => $pageConfigs]);
+        return view('/content/apps/quotation/quote-preview', ['pageConfigs' => $pageConfigs]);
     }
 
     // invoice edit App
@@ -27,7 +27,7 @@ class QuoteController extends Controller
     {
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/apps/invoice/app-invoice-edit', ['pageConfigs' => $pageConfigs]);
+        return view('/content/apps/quotation/quote-edit', ['pageConfigs' => $pageConfigs]);
     }
 
     // invoice edit App
@@ -35,7 +35,7 @@ class QuoteController extends Controller
     {
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/apps/invoice/app-invoice-add', ['pageConfigs' => $pageConfigs]);
+        return view('/content/apps/quotation/quote-add', ['pageConfigs' => $pageConfigs]);
     }
 
     // invoice print App
@@ -43,7 +43,7 @@ class QuoteController extends Controller
     {
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/apps/invoice/app-invoice-print', ['pageConfigs' => $pageConfigs]);
+        return view('/content/apps/quotation/quote-print', ['pageConfigs' => $pageConfigs]);
     }
 
     // User List Page

@@ -69,7 +69,7 @@
               </g>
             </g>
           </svg>
-          <h2 class="brand-text text-primary ms-1">WE DELIVER</h2>
+          <h2 class="brand-text text-primary ms-1">PFUXELA BOOKINGS</h2>
         </a>
 
         <h4 class="card-title mb-1">Bem-Vindo 👋</h4>
@@ -119,7 +119,7 @@
           <button type="submit" class="btn btn-primary w-100" tabindex="4">Entrar</button>
         </form>
 
-        <p class="text-center mt-2">
+        {{-- <p class="text-center mt-2">
           <span>New on our platform?</span>
           <a href="{{url('auth/register-basic')}}">
             <span>Create an account</span>
@@ -143,7 +143,7 @@
           <a href="#" class="btn btn-github">
             <i data-feather="github"></i>
           </a>
-        </div>
+        </div> --}}
       </div>
     </div>
     <!-- /Login basic -->
