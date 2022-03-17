@@ -24,8 +24,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">59</h3>
-            <span>Total Viaturas</span>
+            <h3 class="fw-bolder mb-75">9</h3>
+            <span>Total Motoristas</span>
           </div>
           <div class="avatar bg-light-primary p-50">
             <span class="avatar-content">
@@ -40,7 +40,7 @@
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
             <h3 class="fw-bolder mb-75">67</h3>
-            <span>Viaturas alugadas</span>
+            <span>Total Activos</span>
           </div>
           <div class="avatar bg-light-danger p-50">
             <span class="avatar-content">
@@ -54,8 +54,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">60</h3>
-            <span>Viaturas reservadas</span>
+            <h3 class="fw-bolder mb-75">19,860</h3>
+            <span>Total Alocados</span>
           </div>
           <div class="avatar bg-light-success p-50">
             <span class="avatar-content">
@@ -70,7 +70,7 @@
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
             <h3 class="fw-bolder mb-75">7</h3>
-            <span>Viaturas disponiveis</span>
+            <span>Total Offline</span>
           </div>
           <div class="avatar bg-light-warning p-50">
             <span class="avatar-content">
@@ -84,11 +84,11 @@
   <!-- list and filter start -->
   <div class="card">
     <div class="card-body border-bottom">
-      <h4 class="card-title">Pesquisar e Filtrar</h4>
+      <h4 class="card-title">Pesquisar & Filtrar</h4>
       <div class="row">
-        <div class="col-md-4 marca_"></div>
-        <div class="col-md-4 modelo_"></div>
-        <div class="col-md-4 lot_"></div>
+        <div class="col-md-4 user_role"></div>
+        <div class="col-md-4 user_plan"></div>
+        <div class="col-md-4 user_status"></div>
       </div>
     </div>
     <div class="card-datatable table-responsive pt-0">
@@ -96,11 +96,10 @@
         <thead class="table-light">
           <tr>
             <th></th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Matricula</th>
-            <th>Lot</th>
-            <th>Kilometragem</th>
+            <th>Nome</th>
+            <th>Contacto</th>
+            <th>Email</th>
+            <th>Estado</th>
             <th>Acção</th>
           </tr>
         </thead>
@@ -112,11 +111,11 @@
         <form class="add-new-user modal-content pt-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
           <div class="modal-header mb-1">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar viatura</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar Motorista</h5>
           </div>
           <div class="modal-body flex-grow-1">
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-fullname">Marca</label>
+              <label class="form-label" for="basic-icon-default-fullname">Nome completo</label>
               <input
                 type="text"
                 class="form-control dt-full-name"
@@ -126,17 +125,7 @@
               />
             </div>
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-uname">Modelo</label>
-              <input
-                type="text"
-                id="basic-icon-default-uname"
-                class="form-control dt-uname"
-                placeholder=""
-                name="user-name"
-              />
-            </div>
-            <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-email">Matricula</label>
+              <label class="form-label" for="basic-icon-default-email">Email</label>
               <input
                 type="text"
                 id="basic-icon-default-email"
@@ -146,45 +135,16 @@
               />
             </div>
             <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-contact">Kilometragem</label>
+              <label class="form-label" for="basic-icon-default-contact">Contacto</label>
               <input
                 type="text"
                 id="basic-icon-default-contact"
                 class="form-control dt-contact"
-                placeholder=""
+                placeholder="+258 (84) 0000000"
                 name="user-contact"
               />
             </div>
-            <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-company">Lotação</label>
-              <input
-                type="text"
-                id="basic-icon-default-company"
-                class="form-control dt-contact"
-                placeholder=""
-                name="user-company"
-              />
-            </div>
-            <div class="mb-1">
-              <label class="form-label" for="country">Tipo Combustivel</label>
-              <select id="country" class="select2 form-select">
-                <option value="Australia">Casolina</option>
-                <option value="Bangladesh">Disel</option>
-                <option value="Belarus">Gas</option>
-              </select>
-            </div>
-
-            <div class="mb-1">
-              <label class="form-label" for="basic-icon-default-company">Nivel de combustivel</label>
-              <input
-                type="text"
-                id="basic-icon-default-company"
-                class="form-control dt-contact"
-                placeholder=""
-                name="user-company"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary me-1 data-submit">Guardar</button>
+            <button type="submit" class="btn btn-primary me-1 data-submit">Criar</button>
             <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
           </div>
         </form>
@@ -218,5 +178,5 @@
 
 @section('page-script')
   {{-- Page js files --}}
-  <script src="{{ asset(mix('js/scripts/pages/app-car-list.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/pages/app-driver-list.js')) }}"></script>
 @endsection

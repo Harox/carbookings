@@ -85,16 +85,16 @@
   <ul class="nav navbar-nav align-items-center ms-auto">
     <li class="nav-item dropdown dropdown-language">
       <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-        <i class="flag-icon flag-icon-us"></i>
-        <span class="selected-language">Portuguese</span>
+        <i class="flag-icon flag-icon-mz"></i>
+        <span class="selected-language">Português</span>
       </a>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
         
         <a class="dropdown-item" href="{{ url('admin/lang/pt') }}" data-language="pt">
-          <i class="flag-icon flag-icon-pt"></i> Portuguese
+          <i class="flag-icon flag-icon-mz"></i> Português
         </a>
-        <a class="dropdown-item" href="{{ url('lang/en') }}" data-language="en">
-          <i class="flag-icon flag-icon-us"></i> English
+        <a class="dropdown-item" href="{{ url('admin/lang/en') }}" data-language="en">
+          <i class="flag-icon flag-icon-us"></i> Inglês
         </a>
       </div>
     </li>
@@ -109,12 +109,6 @@
         <ul class="search-list search-list-main"></ul>
       </div>
     </li>
-    <li class="nav-item dropdown dropdown-cart me-25">
-      <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-        <i class="ficon" data-feather="shopping-cart"></i>
-        <span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span>
-      </a>
-    </li>
     <li class="nav-item dropdown dropdown-notification me-25">
       <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
         <i class="ficon" data-feather="bell"></i>
@@ -123,8 +117,8 @@
       <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
         <li class="dropdown-menu-header">
           <div class="dropdown-header d-flex">
-            <h4 class="notification-title mb-0 me-auto">Notifications</h4>
-            <div class="badge rounded-pill badge-light-primary">6 New</div>
+            <h4 class="notification-title mb-0 me-auto">Notificações</h4>
+            <div class="badge rounded-pill badge-light-primary">6 Novas</div>
           </div>
         </li>
         <li class="scrollable-container media-list">

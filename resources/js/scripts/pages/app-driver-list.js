@@ -44,15 +44,14 @@ $(function () {
   // Users List datatable
   if (dtUserTable.length) {
     dtUserTable.DataTable({
-      ajax: assetPath + 'data/car-list.json', // JSON file to add data
+      ajax: assetPath + 'data/driver-list.json', // JSON file to add data
       columns: [
         // columns according to JSON
         { data: '' },
-        { data: 'marca' },
-        { data: 'modelo' },
-        { data: 'matricula' },
-        { data: 'lotacao' },
-        { data: 'kilometragem' },
+        { data: 'nome' },
+        { data: 'email' },
+        { data: 'contacto' },
+        { data: 'estado' },
         { data: '' }
       ],
       columnDefs: [
@@ -67,51 +66,83 @@ $(function () {
           }
         },
         {
-          // Marca
+          // Driver name
           targets: 1,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
-            var $marca = full['marca'],
-              $ano = full['ano'],
+            var $nome = full['nome'],
+              $email = full['email'],
               $image = full['avatar'];
-
-              return "<span class='text-truncate align-middle'>" + $marca + '</span>';
-
+            if ($image) {
+              // For Avatar image
+              var $output =
+                '<img src="' + assetPath + 'images/avatars/' + $image + '" alt="Avatar" height="32" width="32">';
+            } else {
+              // For Avatar badge
+              var stateNum = Math.floor(Math.random() * 5) + 1;
+              var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
+              var $state = states[stateNum],
+                $nome = full['nome'],
+                $initials = $nome.match(/\b\w/g) || [];
+              $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
+              $output = '<span class="avatar-content">' + $initials + '</span>';
+            }
+            var colorClass = $image === '' ? ' bg-light-' + $state + ' ' : '';
+            // Creates full output for row
+            var $row_output =
+              '<div class="d-flex justify-content-left align-items-center">' +
+              '<div class="avatar-wrapper">' +
+              '<div class="avatar ' +
+              colorClass +
+              ' me-1">' +
+              $output +
+              '</div>' +
+              '</div>' +
+              '<div class="d-flex flex-column">' +
+              '<a href="' +
+              userView +
+              '" class="user_name text-truncate text-body"><span class="fw-bolder">' +
+              $nome +
+              '</span></a>' +
+              '<small class="emp_post text-muted">' +
+              $email +
+              '</small>' +
+              '</div>' +
+              '</div>';
+            return $row_output;
           }
         },
         {
-          // Modelo
+          // Driver Email
           targets: 2,
           render: function (data, type, full, meta) {
-            var $modelo = full['modelo'];
-            return "<span class='text-truncate align-middle'>" + $modelo + '</span>';
+            var $email = full['email'];
+            return "<span class='text-truncate align-middle'>" + $email + '</span>';
           }
         },
         {
-          //Matricula
           targets: 3,
           render: function (data, type, full, meta) {
-            var $matricula = full['matricula'];
+            var $contacto = full['contacto'];
 
-            return '<span class="text-nowrap">' + $matricula + '</span>';
+            return '<span class="text-nowrap">' + $contacto + '</span>';
           }
         },
         {
-          //lotacao
+          // Driver Status
           targets: 4,
           render: function (data, type, full, meta) {
-            var $lotacao = full['lotacao'];
+            var $estado = full['estado'];
 
-            return '<span class="text-nowrap">' + $lotacao + '</span>';
-          }
-        },
-        {
-          // kilometragem
-          targets: 5,
-          render: function (data, type, full, meta) {
-            var $kilometragem = full['kilometragem'];
+            return $estado;
 
-            return '<span class="text-nowrap">' + $kilometragem + '</span>';
+            // return (
+            //   '<span class="badge rounded-pill ' +
+            //   statusObj[$estado].class +
+            //   '" text-capitalized>' +
+            //   statusObj[$estado].title +
+            //   '</span>'
+            // );
           }
         },
         {
@@ -202,7 +233,7 @@ $(function () {
           }
         },
         {
-          text: 'Adicionar Viatura',
+          text: 'Adicionar Motorista',
           className: 'add-new btn btn-primary',
           attr: {
             'data-bs-toggle': 'modal',
@@ -219,7 +250,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['marca'];
+              return 'Detalhes de ' + data['nome'];
             }
           }),
           type: 'column',
@@ -253,39 +284,16 @@ $(function () {
         }
       },
       initComplete: function () {
-        // Adding marca filter once table initialized
-        this.api()
-          .columns(1)
-          .every(function () {
-            var column = this;
-            var label = $('<label class="form-label" for="marca">Marca</label>').appendTo('.marca_');
-            var select = $(
-              '<select id="marca" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Selecione a marca </option></select>'
-            )
-            .appendTo('.marca_')
-            .on('change', function () {
-              var val = $.fn.dataTable.util.escapeRegex($(this).val());
-              column.search(val ? '^' + val + '$' : '', true, false).draw();
-            });
-
-            column
-              .data()
-              .unique()
-              .sort()
-              .each(function (d, j) {
-                select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
-              });
-          });
-        // Adding modelo filter once table initialized
+        // Adding role filter once table initialized
         this.api()
           .columns(2)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="modelo">Modelo</label>').appendTo('.modelo_');
+            var label = $('<label class="form-label" for="UserRole">Role</label>').appendTo('.user_role');
             var select = $(
-              '<select id="modelo" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Selecione o modelo </option></select>'
+              '<select id="UserRole" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Select Role </option></select>'
             )
-              .appendTo('.modelo_')
+              .appendTo('.user_role')
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -299,16 +307,16 @@ $(function () {
                 select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
               });
           });
-        // Adding lotacao filter once table initialized
+        // Adding plan filter once table initialized
         this.api()
-          .columns(4)
+          .columns(3)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="lotacao">Lotação</label>').appendTo('.lot_');
+            var label = $('<label class="form-label" for="UserPlan">Plan</label>').appendTo('.user_plan');
             var select = $(
-              '<select id="lotacao" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Selecione a lotação </option></select>'
+              '<select id="UserPlan" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Select Plan </option></select>'
             )
-              .appendTo('.lot_')
+              .appendTo('.user_plan')
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -320,6 +328,35 @@ $(function () {
               .sort()
               .each(function (d, j) {
                 select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
+              });
+          });
+        // Adding status filter once table initialized
+        this.api()
+          .columns(5)
+          .every(function () {
+            var column = this;
+            var label = $('<label class="form-label" for="FilterTransaction">Status</label>').appendTo('.user_status');
+            var select = $(
+              '<select id="FilterTransaction" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Select Status </option></select>'
+            )
+              .appendTo('.user_status')
+              .on('change', function () {
+                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                column.search(val ? '^' + val + '$' : '', true, false).draw();
+              });
+
+            column
+              .data()
+              .unique()
+              .sort()
+              .each(function (d, j) {
+                select.append(
+                  '<option value="' +
+                    statusObj[d].title +
+                    '" class="text-capitalize">' +
+                    statusObj[d].title +
+                    '</option>'
+                );
               });
           });
       }
@@ -357,7 +394,7 @@ $(function () {
     dtContact.each(function () {
       new Cleave($(this), {
         phone: true,
-        phoneRegionCode: 'MZ'
+        phoneRegionCode: 'US'
       });
     });
   }

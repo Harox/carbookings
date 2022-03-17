@@ -147,6 +147,7 @@ return [
     "Transactions" => "Transações",
     "Reports" => "Relatorios",
     "create" => "Criar",
+    "Drivers" => "Motoristas",
     "Lista" => "Lista",
     "View" => "Ver",
     "Edit" => "Editar",

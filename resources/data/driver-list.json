@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nome": "Gil Santana",
+      "email": "gil@gmail.com",
+      "contacto": "840297715",
+      "estado": 3,
+      "avatar": ""
+    },
+    {
+      "id": 2,
+      "nome": "Mateus Covane",
+      "email": "mateus@gmail.com",
+      "contacto": "841510158",
+      "estado": 2,
+      "avatar": ""
+    },
+    {
+      "id": 3,
+      "nome": "Jose Nhantumbo",
+      "email": "jose@gmail.com",
+      "contacto": "870717101",
+      "estado": 3,
+      "avatar": ""
+    }
+    
+  ]
+}

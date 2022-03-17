@@ -19,6 +19,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookingCOntroller;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SettingsController;
@@ -41,6 +42,7 @@ use App\Http\Controllers\UserController;
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('store', [AuthController::class, 'login'])->name('loginstore');
 Route::post('register', [AuthController::class, 'register'])->name('register');
+Route::get('/', ['middleware' => 'auth', DashboardController::class, 'dashboard'])->name('home');
 
 
 //Admin Routes
@@ -68,6 +70,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     //Cars Routes
     Route::get('cars/list', [CarsController::class, 'cars_list'])->name('cars-list');
+
+    //Drivers Routes
+    Route::get('drivers/list', [DriverController::class, 'driver_list'])->name('driver-list');
 
 
     //Customers Routes

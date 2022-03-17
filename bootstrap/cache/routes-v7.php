@@ -278,6 +278,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'home',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/logout' => 
       array (
         0 => 
@@ -304,7 +324,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nsGlN2bxYADr6mqE',
+            '_route' => 'generated::GbuDc4pe0MneGDOf',
           ),
           1 => NULL,
           2 => 
@@ -525,6 +545,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'cars-list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/drivers/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'driver-list',
           ),
           1 => NULL,
           2 => 
@@ -1593,6 +1633,43 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'home' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => '/',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\DashboardController@dashboard',
+        'controller' => 'App\\Http\\Controllers\\DashboardController@dashboard',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'home',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'logout' => 
     array (
       'methods' => 
@@ -1631,7 +1708,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::nsGlN2bxYADr6mqE' => 
+    'generated::GbuDc4pe0MneGDOf' => 
     array (
       'methods' => 
       array (
@@ -1653,7 +1730,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::nsGlN2bxYADr6mqE',
+        'as' => 'generated::GbuDc4pe0MneGDOf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2072,6 +2149,44 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'cars-list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'driver-list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/drivers/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\DriverController@driver_list',
+        'controller' => 'App\\Http\\Controllers\\DriverController@driver_list',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'driver-list',
       ),
       'fallback' => false,
       'defaults' => 

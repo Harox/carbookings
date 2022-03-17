@@ -43,6 +43,12 @@
       "slug": "cars-list"
     },
     {
+      "name": "Drivers",
+      "icon": "slack",
+      "url": "admin/drivers/list",
+      "slug": "driver-list"
+    },
+    {
       "name": "Customers",
       "icon": "command",
       "url": "admin/customers/list",
