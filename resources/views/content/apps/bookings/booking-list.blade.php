@@ -169,7 +169,7 @@
               </select>
             </div>
 
-            <div class="col-md-6 mb-1">
+            <div class="mb-1">
               <label class="form-label" for="fp-range">Data</label>
               <input
                 type="text"
@@ -278,7 +278,7 @@
 
 @section('page-script')
   {{-- Page js files --}}
-  <script src="{{ asset(mix('js/scripts/pages/app-booking-list.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/forms/pickers/form-pickers.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/pages/app-booking-list.js')) }}"></script>
 @endsection
 

@@ -279,26 +279,18 @@ $(function () {
       initComplete: function () {
         // Adding role filter once table initialized
         this.api()
-          .columns(2)
+          .columns(4)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="_data">Viatura</label>').appendTo('.data_');
+            var label = $('<label class="form-label" for="_data">Data</label>').appendTo('.data_');
             var select = $(
-              '<select id="_data" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Data </option></select>'
-            )
-              .appendTo('.data_')
-              .on('change', function () {
-                var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? '^' + val + '$' : '', true, false).draw();
-              });
+              '<input type="date" id="_data" class="form-control flatpickr-basic" placeholder="YYYY-MM-DD" />'
+            ).appendTo('.data_')
+            .on('change', function () {
+              var val = $.fn.dataTable.util.escapeRegex($(this).val());
+              column.search(val ? '^' + val + '$' : '', true, false).draw();
+            });
 
-            column
-              .data()
-              .unique()
-              .sort()
-              .each(function (d, j) {
-                select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
-              });
           });
         // Adding plan filter once table initialized
         this.api()

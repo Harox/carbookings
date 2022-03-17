@@ -6,7 +6,7 @@
       "viatura": "Honda Accord",
       "matricula": "AAU 3443",
       "valor": "4898.67",
-      "data": "14/03/2022",
+      "data": "2022-03-15",
       "status": 3,
       "avatar": ""
     },
@@ -16,7 +16,7 @@
       "viatura": "Toyota RunX",
       "matricula": "AAY 344",
       "valor": "7433.86",
-      "data": "12/03/2022",
+      "data": "2022-03-16",
       "status": 2,
       "avatar": ""
     },
@@ -26,7 +26,7 @@
       "viatura": "Toyota Hiace",
       "matricula": "AAI 64",
       "valor": "8898.98",
-      "data": "12/03/2022",
+      "data": "2022-03-17",
       "status": 1,
       "avatar": ""
     }
