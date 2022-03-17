@@ -8,7 +8,7 @@ $(function () {
     dtContact = $('.dt-contact'),
     statusObj = {
       1: { title: 'Pendente', class: 'badge-light-warning' },
-      2: { title: 'Confirmado', class: 'badge-light-success' },
+      2: { title: 'Reservado', class: 'badge-light-success' },
       3: { title: 'Cancelado', class: 'badge-light-secondary' }
     };
 
@@ -39,10 +39,10 @@ $(function () {
       columns: [
         // columns according to JSON
         { data: '' },
-        { data: 'full_name' },
-        { data: 'car' },
-        { data: 'current_plan' },
-        { data: 'billing' },
+        { data: 'cliente' },
+        { data: 'viatura' },
+        { data: 'valor' },
+        { data: 'data' },
         { data: 'status' },
         { data: '' }
       ],
@@ -58,27 +58,22 @@ $(function () {
           }
         },
         {
-          // User full name and username
+          // coluna cliente
           targets: 1,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
-            var $name = full['full_name'],
-              $email = full['email'],
+            var $cliente = full['cliente'],
               $image = full['avatar'];
-            if ($image) {
-              // For Avatar image
-              var $output =
-                '<img src="' + assetPath + 'images/avatars/' + $image + '" alt="Avatar" height="32" width="32">';
-            } else {
+
               // For Avatar badge
               var stateNum = Math.floor(Math.random() * 6) + 1;
               var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
               var $state = states[stateNum],
-                $name = full['full_name'],
-                $initials = $name.match(/\b\w/g) || [];
+                $cliente = full['cliente'],
+                $initials = $cliente.match(/\b\w/g) || [];
               $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
               $output = '<span class="avatar-content">' + $initials + '</span>';
-            }
+            
             var colorClass = $image === '' ? ' bg-light-' + $state + ' ' : '';
             // Creates full output for row
             var $row_output =
@@ -94,41 +89,42 @@ $(function () {
               '<a href="' +
               userView +
               '" class="user_name text-truncate text-body"><span class="fw-bolder">' +
-              $name +
+              $cliente +
               '</span></a>' +
-              '<small class="emp_post text-muted">' +
-              $email +
-              '</small>' +
               '</div>' +
               '</div>';
             return $row_output;
           }
         },
         {
-          // User Role
+          // Coluna Viatura
           targets: 2,
           render: function (data, type, full, meta) {
-            var $role = full['car'];
-            var roleBadgeObj = {
-              Subscriber: feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary me-50' }),
-              Author: feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning me-50' }),
-              Maintainer: feather.icons['database'].toSvg({ class: 'font-medium-3 text-success me-50' }),
-              Editor: feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info me-50' }),
-              Admin: feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger me-50' })
-            };
-            return "<span class='text-truncate align-middle'>" + $role + '</span>';
+            var $viatura = full['viatura'];
+
+            return "<span class='text-truncate align-middle'>" + $viatura + '</span>';
           }
         },
         {
+          //Coluna Valor
+          targets: 3,
+          render: function (data, type, full, meta) {
+            var $valor = full['valor'];
+
+            return '<span class="text-nowrap">' + $valor + '</span>';
+          }
+        },
+        {
+          //Coluna Data
           targets: 4,
           render: function (data, type, full, meta) {
-            var $billing = full['billing'];
+            var $data = full['data'];
 
-            return '<span class="text-nowrap">' + $billing + '</span>';
+            return '<span class="text-nowrap">' + $data + '</span>';
           }
         },
         {
-          // User Status
+          // Coluna Estado
           targets: 5,
           render: function (data, type, full, meta) {
             var $status = full['status'];
@@ -145,7 +141,6 @@ $(function () {
         {
           // Actions
           targets: -1,
-          title: 'Actions',
           orderable: false,
           render: function (data, type, full, meta) {
             return (
@@ -158,10 +153,10 @@ $(function () {
               userView +
               '" class="dropdown-item">' +
               feather.icons['file-text'].toSvg({ class: 'font-small-4 me-50' }) +
-              'Details</a>' +
+              'Ver</a>' +
               '<a href="javascript:;" class="dropdown-item delete-record">' +
               feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
-              'Delete</a></div>' +
+              'Apagar</a></div>' +
               '</div>' +
               '</div>'
             );
@@ -180,7 +175,7 @@ $(function () {
         '>',
       language: {
         sLengthMenu: 'Show _MENU_',
-        search: 'Search',
+        search: 'Pesquisar',
         searchPlaceholder: 'Pesquisar..'
       },
       // Buttons with Dropdown
@@ -287,11 +282,11 @@ $(function () {
           .columns(2)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserRole">Viatura</label>').appendTo('.user_role');
+            var label = $('<label class="form-label" for="_data">Viatura</label>').appendTo('.data_');
             var select = $(
-              '<select id="UserRole" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Data </option></select>'
+              '<select id="_data" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Data </option></select>'
             )
-              .appendTo('.user_role')
+              .appendTo('.data_')
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -307,14 +302,14 @@ $(function () {
           });
         // Adding plan filter once table initialized
         this.api()
-          .columns(3)
+          .columns(2)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserPlan">Viatura</label>').appendTo('.user_plan');
+            var label = $('<label class="form-label" for="_matricula">Matricula</label>').appendTo('.matricula_');
             var select = $(
-              '<select id="UserPlan" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Viatura </option></select>'
+              '<select id="_matricula" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Selecione a matricula </option></select>'
             )
-              .appendTo('.user_plan')
+              .appendTo('.matricula_')
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -333,11 +328,11 @@ $(function () {
           .columns(5)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="FilterTransaction">Estado</label>').appendTo('.user_status');
+            var label = $('<label class="form-label" for="_status">Estado</label>').appendTo('.status_');
             var select = $(
-              '<select id="FilterTransaction" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Estado </option></select>'
+              '<select id="_status" class="form-select text-capitalize mb-md-0 mb-2xx"><option value="">Selecione o estado </option></select>'
             )
-              .appendTo('.user_status')
+              .appendTo('.status_')
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();

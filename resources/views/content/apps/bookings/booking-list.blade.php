@@ -88,9 +88,9 @@
     <div class="card-body border-bottom">
       <h4 class="card-title">Pesquisar e filtrar</h4>
       <div class="row">
-        <div class="col-md-4 user_plan"></div>
-        <div class="col-md-4 user_role"></div>
-        <div class="col-md-4 user_status"></div>
+        <div class="col-md-4 matricula_"></div>
+        <div class="col-md-4 data_"></div>
+        <div class="col-md-4 status_"></div>
       </div>
     </div>
     <div class="card-datatable table-responsive pt-0">
