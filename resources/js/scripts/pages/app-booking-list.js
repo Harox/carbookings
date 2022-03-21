@@ -8,8 +8,9 @@ $(function () {
     dtContact = $('.dt-contact'),
     statusObj = {
       1: { title: 'Pendente', class: 'badge-light-warning' },
-      2: { title: 'Reservado', class: 'badge-light-success' },
-      3: { title: 'Cancelado', class: 'badge-light-secondary' }
+      2: { title: 'Reservado', class: 'badge-light-info' },
+      3: { title: 'Cancelado', class: 'badge-light-danger' },
+      4: { title: 'Concluido', class: 'badge-light-success' }
     };
 
   var assetPath = '../../../app-assets/',
