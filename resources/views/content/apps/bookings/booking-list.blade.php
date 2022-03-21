@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/buttons.bootstrap5.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/rowGroup.bootstrap5.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+
 @endsection
 
 @section('page-style')
@@ -26,8 +28,8 @@
       <div class="card">
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
-            <h3 class="fw-bolder mb-75">459</h3>
-            <span>Total Reservas</span>
+            <h3 class="fw-bolder mb-75">59</h3>
+            <span>Reservados</span>
           </div>
           <div class="avatar bg-light-primary p-50">
             <span class="avatar-content">
@@ -57,7 +59,7 @@
         <div class="card-body d-flex align-items-center justify-content-between">
           <div>
             <h3 class="fw-bolder mb-75">60</h3>
-            <span>Confirmadas</span>
+            <span>Concluidas</span>
           </div>
           <div class="avatar bg-light-success p-50">
             <span class="avatar-content">
@@ -76,7 +78,7 @@
           </div>
           <div class="avatar bg-light-warning p-50">
             <span class="avatar-content">
-              <i data-feather="user-x" class="font-medium-4"></i>
+              <i class="fa-solid fa-user"></i>
             </span>
           </div>
         </div>
