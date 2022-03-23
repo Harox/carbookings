@@ -13,12 +13,12 @@ $(function () {
       4: { title: 'Concluido', class: 'badge-light-success' }
     };
 
-  var assetPath = '../../../app-assets/',
-    userView = 'app-user-view-account.html';
+  // var assetPath = '../../../app-assets/',
+  //   userView = 'app-user-view-account.html';
 
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
-    userView = assetPath + 'app/user/view/account';
+    userView = assetPath + 'admin/bookings/view';
   }
 
   select.each(function () {

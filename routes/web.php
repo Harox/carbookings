@@ -59,14 +59,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     //Users
     Route::get('user/list', [UserController::class, 'user_list'])->name('app-user-list');
-    Route::get('user/view/account', [UserController::class, 'user_view_account'])->name('app-user-view-account');
-    Route::get('user/view/security', [UserController::class, 'user_view_security'])->name('app-user-view-security');
-    Route::get('user/view/billing', [UserController::class, 'user_view_billing'])->name('app-user-view-billing');
-    Route::get('user/view/notifications', [UserController::class, 'user_view_notifications'])->name('app-user-view-notifications');
-    Route::get('user/view/connections', [AppsCUserControllerontroller::class, 'user_view_connections'])->name('app-user-view-connections');
+    // Route::get('user/view/account', [UserController::class, 'user_view_account'])->name('app-user-view-account');
+    // Route::get('user/view/security', [UserController::class, 'user_view_security'])->name('app-user-view-security');
+    // Route::get('user/view/billing', [UserController::class, 'user_view_billing'])->name('app-user-view-billing');
+    // Route::get('user/view/notifications', [UserController::class, 'user_view_notifications'])->name('app-user-view-notifications');
+    // Route::get('user/view/connections', [AppsCUserControllerontroller::class, 'user_view_connections'])->name('app-user-view-connections');
 
-    //Customers Routes
+    //Bookings Routes
     Route::get('bookings/list', [BookingCOntroller::class, 'booking_list'])->name('booking-list');
+    Route::get('bookings/view', [BookingCOntroller::class, 'booking_view'])->name('booking-view');
+
 
     //Cars Routes
     Route::get('cars/list', [CarsController::class, 'cars_list'])->name('cars-list');
