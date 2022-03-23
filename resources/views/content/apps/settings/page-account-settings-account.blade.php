@@ -50,7 +50,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{asset('page/account-settings-connections')}}">
           <i data-feather="link" class="font-medium-3 me-50"></i>
-          <span class="fw-bold">Connections</span>
+          <span class="fw-bold">Cargos e Permissões</span>
         </a>
       </li>
     </ul>
