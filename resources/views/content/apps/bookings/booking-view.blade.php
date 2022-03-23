@@ -31,85 +31,47 @@
             <div class="d-flex align-items-center flex-column">
               <img
                 class="img-fluid rounded mt-3 mb-2"
-                src="{{asset('images/portrait/small/avatar-s-2.jpg')}}"
+                src="{{asset('images/portrait/small/man.png')}}"
                 height="110"
                 width="110"
                 alt="User avatar"
               />
               <div class="user-info text-center">
-                <h4>Gertrude Barton</h4>
-                <span class="badge bg-light-secondary">Author</span>
+                <h4>Feliciano Cossa</h4>
               </div>
             </div>
           </div>
-          <div class="d-flex justify-content-around my-2 pt-75">
-            <div class="d-flex align-items-start me-2">
-              <span class="badge bg-light-primary p-75 rounded">
-                <i data-feather="check" class="font-medium-2"></i>
-              </span>
-              <div class="ms-75">
-                <h4 class="mb-0">1.23k</h4>
-                <small>Tasks Done</small>
-              </div>
-            </div>
-            <div class="d-flex align-items-start">
-              <span class="badge bg-light-primary p-75 rounded">
-                <i data-feather="briefcase" class="font-medium-2"></i>
-              </span>
-              <div class="ms-75">
-                <h4 class="mb-0">568</h4>
-                <small>Projects Done</small>
-              </div>
-            </div>
-          </div>
-          <h4 class="fw-bolder border-bottom pb-50 mb-1">Details</h4>
           <div class="info-container">
             <ul class="list-unstyled">
               <li class="mb-75">
-                <span class="fw-bolder me-25">Username:</span>
-                <span>violet.dev</span>
+                <span class="fw-bolder me-25">Contacto:</span>
+                <span>840297715</span>
               </li>
               <li class="mb-75">
-                <span class="fw-bolder me-25">Billing Email:</span>
-                <span>vafgot@vultukir.org</span>
+                <span class="fw-bolder me-25">Email:</span>
+                <span>feliciano@gmail.com</span>
               </li>
               <li class="mb-75">
-                <span class="fw-bolder me-25">Status:</span>
-                <span class="badge bg-light-success">Active</span>
+                <span class="fw-bolder me-25">Estado:</span>
+                <span class="badge bg-light-success">Activo</span>
               </li>
               <li class="mb-75">
-                <span class="fw-bolder me-25">Role:</span>
-                <span>Author</span>
-              </li>
-              <li class="mb-75">
-                <span class="fw-bolder me-25">Tax ID:</span>
-                <span>Tax-8965</span>
-              </li>
-              <li class="mb-75">
-                <span class="fw-bolder me-25">Contact:</span>
-                <span>+1 (609) 933-44-22</span>
-              </li>
-              <li class="mb-75">
-                <span class="fw-bolder me-25">Language:</span>
-                <span>English</span>
-              </li>
-              <li class="mb-75">
-                <span class="fw-bolder me-25">Country:</span>
-                <span>Wake Island</span>
+                <span class="fw-bolder me-25">Endereço:</span>
+                <span>Maputo, Alto Maé</span>
               </li>
             </ul>
             <div class="d-flex justify-content-center pt-2">
               <a href="javascript:;" class="btn btn-primary me-1" data-bs-target="#editUser" data-bs-toggle="modal">
-                Edit
+                Editar
               </a>
-              <a href="javascript:;" class="btn btn-outline-danger suspend-user">Suspended</a>
+              <a href="javascript:;" class="btn btn-outline-danger suspend-user">Suspender</a>
             </div>
           </div>
         </div>
       </div>
       <!-- /User Card -->
       <!-- Plan Card -->
-      <div class="card border-primary">
+      {{-- <div class="card border-primary">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start">
             <span class="badge bg-light-primary">Standard</span>
@@ -145,7 +107,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- /Plan Card -->
     </div>
     <!--/ User Sidebar -->
@@ -153,141 +115,201 @@
     <!-- User Content -->
     <div class="col-xl-8 col-lg-7 col-md-7 order-0 order-md-1">
       <!-- User Pills -->
-      <ul class="nav nav-pills mb-2">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{asset('app/user/view/account')}}">
-            <i data-feather="user" class="font-medium-3 me-50"></i>
-            <span class="fw-bold">Account</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('app/user/view/security')}}">
-            <i data-feather="lock" class="font-medium-3 me-50"></i>
-            <span class="fw-bold">Security</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('app/user/view/billing')}}">
-            <i data-feather="bookmark" class="font-medium-3 me-50"></i>
-            <span class="fw-bold">Billing & Plans</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('app/user/view/notifications')}}">
-            <i data-feather="bell" class="font-medium-3 me-50"></i><span class="fw-bold">Notifications</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('app/user/view/connections')}}">
-            <i data-feather="link" class="font-medium-3 me-50"></i><span class="fw-bold">Connections</span>
-          </a>
-        </li>
-      </ul>
+
       <!--/ User Pills -->
 
       <!-- Project table -->
-      <div class="card">
-        <h4 class="card-header">User's Projects List</h4>
-        <div class="table-responsive">
-          <table class="table datatable-project">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Project</th>
-                <th class="text-nowrap">Total Task</th>
-                <th>Progress</th>
-                <th>Hours</th>
-              </tr>
-            </thead>
-          </table>
+      {{-- <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="user-avatar-section">
+              <div class="d-flex flex-column">
+                  <img class="img-fluid rounded" src="{{asset('images/avatars/sport-car.png')}}" height="64" width="64" alt="car avatar"/>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-md-3">
+              <div class="d-flex flex-row align-items-center">
+                <div class="my-auto">
+                  <h6 class="fw-bolder mb-0">VIATURA</h6>
+                  <p class="card-text font-small-3 mb-0">Toyota Hiace</p>
+                  <p class="card-text font-small-3 mb-0">AAY 33 MC</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex flex-row">
+                <div class="my-auto">
+                  <h6 class="fw-bolder mb-0">Combustivel</h6>
+                  <p class="card-text font-small-3 mb-0">60L</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex flex-row">
+                <div class="my-auto">
+                  <h6 class="fw-bolder mb-0">Kilometragem</h6>
+                  <p class="card-text font-small-3 mb-0">43455 Km</p>
+                </div>
+              </div>
+            </div>
+            <hr>
+           
+          </div>
+
+
+          
         </div>
-      </div>
+      </div> --}}
+
+      
+        <div class="card card-statistics">
+          <div class="card-header">
+            <h4 class="card-title">Viatura</h4>
+            <div class="d-flex align-items-center">
+              <p class="card-text me-25 mb-0">Concluida</p>
+            </div>
+          </div>
+          <div class="card-body statistics-body">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-12 mb-2 mb-md-0">
+                <div class="d-flex flex-row">
+                  <div class="avatar bg-light-primary me-2">
+                    <div class="avatar-content">
+                      <img class="img-fluid rounded" src="{{asset('images/avatars/sport-car.png')}}" alt="car avatar"/>
+                    </div>
+                  </div>
+
+                  <div class="my-auto">
+                    <h6 class="fw-bolder mb-0">Toyota Hiace</h6>
+                    <p class="card-text font-small-3 mb-0">AAY 76MC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-12 mb-2 mb-md-0">
+                <div class="d-flex flex-row">
+                  <div class="avatar bg-light-info me-2">
+                    <div class="avatar-content">
+                      <i data-feather="user" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="my-auto">
+                    <h6 class="fw-bolder mb-0">Combustivel</h6>
+                    <p class="card-text font-small-3 mb-0">56L</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-12 mb-2 mb-sm-0">
+                <div class="d-flex flex-row">
+                  <div class="avatar bg-light-danger me-2">
+                    <div class="avatar-content">
+                      <i data-feather="box" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="my-auto">
+                    <h6 class="fw-bolder mb-0">Lotação</h6>
+                    <p class="card-text font-small-3 mb-0">15 Lugares</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+     
       <!-- /Project table -->
 
-      <!-- Activity Timeline -->
-      <div class="card">
-        <h4 class="card-header">User Activity Timeline</h4>
-        <div class="card-body pt-1">
-          <ul class="timeline ms-50">
-            <li class="timeline-item">
-              <span class="timeline-point timeline-point-indicator"></span>
-              <div class="timeline-event">
-                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                  <h6>User login</h6>
-                  <span class="timeline-event-time me-1">12 min ago</span>
-                </div>
-                <p>User login at 2:12pm</p>
-              </div>
-            </li>
-            <li class="timeline-item">
-              <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
-              <div class="timeline-event">
-                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                  <h6>Meeting with john</h6>
-                  <span class="timeline-event-time me-1">45 min ago</span>
-                </div>
-                <p>React Project meeting with john @10:15am</p>
-                <div class="d-flex flex-row align-items-center mb-50">
-                  <div class="avatar me-50">
-                    <img
-                      src="{{asset('images/portrait/small/avatar-s-7.jpg')}}"
-                      alt="Avatar"
-                      width="38"
-                      height="38"
-                    />
-                  </div>
-                  <div class="user-info">
-                    <h6 class="mb-0">Leona Watkins (Client)</h6>
-                    <p class="mb-0">CEO of pixinvent</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-item">
-              <span class="timeline-point timeline-point-info timeline-point-indicator"></span>
-              <div class="timeline-event">
-                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                  <h6>Create a new react project for client</h6>
-                  <span class="timeline-event-time me-1">2 day ago</span>
-                </div>
-                <p>Add files to new design folder</p>
-              </div>
-            </li>
-            <li class="timeline-item">
-              <span class="timeline-point timeline-point-danger timeline-point-indicator"></span>
-              <div class="timeline-event">
-                <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-                  <h6>Create Invoices for client</h6>
-                  <span class="timeline-event-time me-1">12 min ago</span>
-                </div>
-                <p class="mb-0">Create new Invoices and send to Leona Watkins</p>
-                <div class="d-flex flex-row align-items-center mt-50">
-                  <img class="me-1" src="{{asset('images/icons/pdf.png')}}" alt="data.json" height="25" />
-                  <h6 class="mb-0">Invoices.pdf</h6>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+       <!-- Transaction card -->
+    <div class="card card-transaction">
+      <div class="card-header">
+        <h4 class="card-title">Viagem</h4>
+        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i>
       </div>
-      <!-- /Activity Timeline -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="transaction-item">
+              <div class="d-flex flex-row">
+                <div class="avatar bg-light-primary rounded">
+                  <div class="avatar-content">
+                    <i data-feather="pocket" class="avatar-icon font-medium-3"></i>
+                  </div>
+                </div>
+                <div class="transaction-info">
+                  <h6 class="transaction-title">Partida</h6>
+                  <small>22/03/2022</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <!-- Invoice table -->
-      <div class="card">
-        <table class="invoice-table table text-nowrap">
-          <thead>
-            <tr>
-              <th></th>
-              <th>#ID</th>
-              <th><i data-feather="trending-up"></i></th>
-              <th>TOTAL Paid</th>
-              <th class="text-truncate">Issued Date</th>
-              <th class="cell-fit">Actions</th>
-            </tr>
-          </thead>
-        </table>
+          <div class="col-md-6">
+            <div class="transaction-item">
+              <div class="d-flex flex-row">
+                <div class="avatar bg-light-success rounded">
+                  <div class="avatar-content">
+                    <i data-feather="check" class="avatar-icon font-medium-3"></i>
+                  </div>
+                </div>
+                <div class="transaction-info">
+                  <h6 class="transaction-title">Volta</h6>
+                  <small>23/03/2022</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        {{-- <div class="transaction-item">
+          <div class="d-flex flex-row">
+            <div class="avatar bg-light-danger rounded">
+              <div class="avatar-content">
+                <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
+              </div>
+            </div>
+            <div class="transaction-info">
+              <h6 class="transaction-title">Paypal</h6>
+              <small>Add Money</small>
+            </div>
+          </div>
+          <div class="fw-bolder text-success">+ $590</div>
+        </div>
+        <div class="transaction-item">
+          <div class="d-flex flex-row">
+            <div class="avatar bg-light-warning rounded">
+              <div class="avatar-content">
+                <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
+              </div>
+            </div>
+            <div class="transaction-info">
+              <h6 class="transaction-title">Mastercard</h6>
+              <small>Ordered Food</small>
+            </div>
+          </div>
+          <div class="fw-bolder text-danger">- $23</div>
+        </div>
+        <div class="transaction-item">
+          <div class="d-flex flex-row">
+            <div class="avatar bg-light-info rounded">
+              <div class="avatar-content">
+                <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
+              </div>
+            </div>
+            <div class="transaction-info">
+              <h6 class="transaction-title">Transfer</h6>
+              <small>Refund</small>
+            </div>
+          </div>
+          <div class="fw-bolder text-success">+ $98</div>
+        </div> --}}
       </div>
-      <!-- /Invoice table -->
+    </div>
+  <!--/ Transaction card -->
+
     </div>
     <!--/ User Content -->
   </div>

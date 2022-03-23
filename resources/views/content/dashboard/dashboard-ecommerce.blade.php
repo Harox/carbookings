@@ -331,7 +331,7 @@
 
   <div class="row match-height">
     <!-- Browser States Card -->
-    <div class="col-lg-4 col-md-6 col-12">
+    {{-- <div class="col-lg-4 col-md-6 col-12">
       <div class="card card-browser-states">
         <div class="card-header">
           <div>
@@ -420,7 +420,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <!--/ Browser States Card -->
 
     <!-- Goal Overview Card -->
