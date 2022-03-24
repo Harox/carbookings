@@ -69,7 +69,7 @@
               </g>
             </g>
           </svg>
-          <h2 class="brand-text text-primary ms-1">PFUXELA BOOKINGS</h2>
+          <h2 class="brand-text text-primary ms-1">PORTAL INTERNO</h2>
         </a>
 
         <h4 class="card-title mb-1">Bem-Vindo 👋</h4>
