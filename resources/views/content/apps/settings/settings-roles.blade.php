@@ -111,31 +111,104 @@
                     </li>
                   </ul>
                   <div class="tab-content">
-                    <div
-                      class="tab-pane active"
-                      id="tabVerticalLeft1"
-                      role="tabpanel"
-                      aria-labelledby="baseVerticalLeft-tab1"
-                    >
-                      <p>
-                        Oat cake marzipan cake lollipop caramels wafer pie jelly beans. Icing halvah chocolate cake carrot
-                        cake. Jelly beans carrot cake marshmallow gingerbread chocolate cake. Sweet fruitcake cheesecake
-                        biscuit cotton candy. Cookie powder marshmallow donut. Gummies cupcake croissant.
-                      </p>
+                    <div class="tab-pane active" id="tabVerticalLeft1" role="tabpanel" aria-labelledby="baseVerticalLeft-tab1">
+                      <section id="vuexy-checkbox-color">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-header">
+                                <h4 class="card-title">Requisições</h4>
+                              </div>
+                              <div class="card-body">
+                                <div class="demo-inline-spacing">
+                                  <div class="form-check form-check-success">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck3" checked />
+                                    <label class="form-check-label" for="colorCheck3">Criar</label>
+                                  </div>
+                                  <div class="form-check form-check-warning">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck4" checked />
+                                    <label class="form-check-label" for="colorCheck4">Visualizar</label>
+                                  </div>
+                                  <div class="form-check form-check-info">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck6" checked />
+                                    <label class="form-check-label" for="colorCheck6">Editar</label>
+                                  </div>
+                                  <div class="form-check form-check-danger">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck5" checked />
+                                    <label class="form-check-label" for="colorCheck5">Apagar</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                     <div class="tab-pane" id="tabVerticalLeft2" role="tabpanel" aria-labelledby="baseVerticalLeft-tab2">
-                      <p>
-                        Sugar plum tootsie roll biscuit caramels. Liquorice brownie pastry cotton candy oat cake fruitcake
-                        jelly chupa chups. Sweet fruitcake cheesecake biscuit cotton candy. Cookie powder marshmallow donut.
-                        Pudding caramels pastry powder cake soufflé wafer caramels. Jelly-o pie cupcake.
-                      </p>
+                      <section id="vuexy-checkbox-color">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-header">
+                                <h4 class="card-title">Abastecimentos</h4>
+                              </div>
+                              <div class="card-body">
+                                <div class="demo-inline-spacing">
+                                  <div class="form-check form-check-success">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck3" checked />
+                                    <label class="form-check-label" for="colorCheck3">Criar</label>
+                                  </div>
+                                  <div class="form-check form-check-warning">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck4" checked />
+                                    <label class="form-check-label" for="colorCheck4">Visualizar</label>
+                                  </div>
+                                  <div class="form-check form-check-info">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck6" checked />
+                                    <label class="form-check-label" for="colorCheck6">Editar</label>
+                                  </div>
+                                  <div class="form-check form-check-danger">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck5" checked />
+                                    <label class="form-check-label" for="colorCheck5">Apagar</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                     <div class="tab-pane" id="tabVerticalLeft3" role="tabpanel" aria-labelledby="baseVerticalLeft-tab3">
-                      <p>
-                        Icing croissant powder jelly bonbon cake marzipan fruitcake. Tootsie roll marzipan tart marshmallow
-                        pastry cupcake chupa chups cookie. Fruitcake dessert lollipop pudding jelly. Cookie dragée jujubes
-                        croissant lemon drops cotton candy. Carrot cake candy canes powder donut toffee cookie.
-                      </p>
+                      <section id="vuexy-checkbox-color">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-header">
+                                <h4 class="card-title">Viaturas</h4>
+                              </div>
+                              <div class="card-body">
+                                <div class="demo-inline-spacing">
+                                  <div class="form-check form-check-success">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck3" checked />
+                                    <label class="form-check-label" for="colorCheck3">Criar</label>
+                                  </div>
+                                  <div class="form-check form-check-warning">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck4" checked />
+                                    <label class="form-check-label" for="colorCheck4">Visualizar</label>
+                                  </div>
+                                  <div class="form-check form-check-info">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck6" checked />
+                                    <label class="form-check-label" for="colorCheck6">Editar</label>
+                                  </div>
+                                  <div class="form-check form-check-danger">
+                                    <input type="checkbox" class="form-check-input" id="colorCheck5" checked />
+                                    <label class="form-check-label" for="colorCheck5">Apagar</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </div>
                 </div>
