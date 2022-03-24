@@ -48,7 +48,7 @@
       </li>
       <!-- connection -->
       <li class="nav-item">
-        <a class="nav-link" href="{{asset('page/account-settings-connections')}}">
+        <a class="nav-link" href="{{asset('admin/settings-roles')}}">
           <i data-feather="link" class="font-medium-3 me-50"></i>
           <span class="fw-bold">Cargos e Permissões</span>
         </a>

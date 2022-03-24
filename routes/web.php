@@ -98,7 +98,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('account-settings-security', [SettingsController::class, 'account_settings_security'])->name('account-settings-security');
     Route::get('account-settings-billing', [SettingsController::class, 'account_settings_billing'])->name('account-settings-billing');
     Route::get('account-settings-notifications', [SettingsController::class, 'account_settings_notifications'])->name('page-account-settings-notifications');
-    Route::get('account-settings-connections', [SettingsController::class, 'account_settings_connections'])->name('account-settings-connections');
+    Route::get('settings-roles', [SettingsController::class, 'settings_roles'])->name('settings-roles');
 
     //Transactions Routes
     Route::get('transactions/list', [TransactionsController::class, 'transaction_list'])->name('transaction-list');

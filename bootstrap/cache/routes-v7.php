@@ -324,7 +324,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::hkaK7iUz96r4OeA3',
+            '_route' => 'generated::MJUDkLFTD0rmpgJL',
           ),
           1 => NULL,
           2 => 
@@ -698,13 +698,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/account-settings-connections' => 
+      '/admin/settings-roles' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'account-settings-connections',
+            '_route' => 'settings-roles',
           ),
           1 => NULL,
           2 => 
@@ -1628,7 +1628,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::hkaK7iUz96r4OeA3' => 
+    'generated::MJUDkLFTD0rmpgJL' => 
     array (
       'methods' => 
       array (
@@ -1650,7 +1650,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::hkaK7iUz96r4OeA3',
+        'as' => 'generated::MJUDkLFTD0rmpgJL',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2388,14 +2388,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'account-settings-connections' => 
+    'settings-roles' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/account-settings-connections',
+      'uri' => 'admin/settings-roles',
       'action' => 
       array (
         'middleware' => 
@@ -2403,14 +2403,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\SettingsController@account_settings_connections',
-        'controller' => 'App\\Http\\Controllers\\SettingsController@account_settings_connections',
+        'uses' => 'App\\Http\\Controllers\\SettingsController@settings_roles',
+        'controller' => 'App\\Http\\Controllers\\SettingsController@settings_roles',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'account-settings-connections',
+        'as' => 'settings-roles',
       ),
       'fallback' => false,
       'defaults' => 

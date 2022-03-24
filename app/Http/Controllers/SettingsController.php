@@ -13,6 +13,13 @@ class SettingsController extends Controller
         return view('/content/apps/settings/page-account-settings-account', ['breadcrumbs' => $breadcrumbs]);
     }
 
+     //Settings roles
+     public function settings_roles()
+     {
+         $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Account Settings"], ['name' => "Connections"]];
+         return view('/content/apps/settings/settings-roles', ['breadcrumbs' => $breadcrumbs]);
+     }
+
     // Account Settings security
     public function account_settings_security()
     {
@@ -32,13 +39,6 @@ class SettingsController extends Controller
     {
         $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Account Settings"], ['name' => "Notifications"]];
         return view('/content/pages/page-account-settings-notifications', ['breadcrumbs' => $breadcrumbs]);
-    }
-
-    // Account Settings connections
-    public function account_settings_connections()
-    {
-        $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Account Settings"], ['name' => "Connections"]];
-        return view('/content/pages/page-account-settings-connections', ['breadcrumbs' => $breadcrumbs]);
     }
 
     // Profile
