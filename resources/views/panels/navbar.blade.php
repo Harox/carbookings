@@ -219,11 +219,7 @@
         data-bs-toggle="dropdown" aria-haspopup="true">
         <div class="user-nav d-sm-flex d-none">
           <span class="user-name fw-bolder">
-            @if (Auth::check())
               {{ Auth::user()->name }}
-            @else
-              John Doe
-            @endif
           </span>
           <span class="user-status">
             Admin
@@ -237,15 +233,15 @@
         </span>
       </a>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-        <h6 class="dropdown-header">Manage Profile</h6>
+        <h6 class="dropdown-header">Gerir perfil</h6>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item"
           href="{{ Route::has('profile.show') ? route('profile.show') : 'javascript:void(0)' }}">
-          <i class="me-50" data-feather="user"></i> Profile
+          <i class="me-50" data-feather="user"></i> Perfil
         </a>
         
         <a class="dropdown-item" href="#">
-          <i class="me-50" data-feather="settings"></i> Settings
+          <i class="me-50" data-feather="settings"></i> Configurações
         </a>
 
         
@@ -259,7 +255,7 @@
           </form>
         @else
           <a class="dropdown-item" href="{{ Route::has('login') ? route('login') : 'javascript:void(0)' }}">
-            <i class="me-50" data-feather="log-in"></i> Login
+            <i class="me-50" data-feather="log-in"></i> Entrar
           </a>
         @endif
       </div>
