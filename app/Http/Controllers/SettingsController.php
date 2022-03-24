@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -18,20 +19,23 @@ class SettingsController extends Controller
      //Settings roles
      public function settings_roles()
      {
-        $i=0;
         $roles = Role::orderBy('id','DESC')->paginate(5);
 
         $rolesID = Role::all();
 
-        
-        $permission = Permission::get();
+        // return $rolesID;
+        $permissions = Permission::get();
 
-        $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
-            ->where("role_has_permissions.role_id",2)
+        foreach ($roles as $key => $role) {
+            $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
+            ->where("role_has_permissions.role_id",$role->id)
             ->get();
-        
+        }
+
+            
+        // return $permissionList;
          $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Account Settings"], ['name' => "Connections"]];
-         return view('/content/apps/settings/settings-roles', ['breadcrumbs' => $breadcrumbs], compact('roles','i', 'rolePermissions','permission'));
+         return view('/content/apps/settings/settings-roles', ['breadcrumbs' => $breadcrumbs], compact('roles', 'rolePermissions','permissions'));
      }
 
      public function storeRole(Request $request)

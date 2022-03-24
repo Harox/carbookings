@@ -96,7 +96,7 @@
       
                               <label>Permissões: </label>
                               <div class="mb-1">
-                                @foreach ($permission as $value)
+                                @foreach ($permissions as $value)
                                 <div class="form-check form-check-success">
                                   <input type="checkbox" name="permission[]" class="form-check-input" value={{$value->id}} />
                                   <label class="form-check-label" for={{$value->id}}>{{ $value->name }}</label>
@@ -148,11 +148,11 @@
                                   <div class="card-body">
                                     <div class="demo-inline-spacing">
                                       @if(!empty($rolePermissions))
-                                        @foreach($rolePermissions as $v)
-                                          <div class="form-check form-check-success">
-                                            <input type="checkbox" class="form-check-input" id="colorCheck3" checked />
-                                            <label class="form-check-label" for="colorCheck3">{{ $v->name }}</label>
-                                          </div>
+                                        @foreach($rolePermissions as $item)
+                                        <div class="form-check form-check-success">
+                                          <input type="checkbox" class="form-check-input" id="colorCheck3" checked />
+                                          <label class="form-check-label" for="colorCheck3">{{ $item->name }}</label>
+                                        </div>   
                                         @endforeach
                                       @endif
                                     </div>
