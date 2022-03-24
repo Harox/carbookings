@@ -324,7 +324,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::MJUDkLFTD0rmpgJL',
+            '_route' => 'generated::f71cgZVCrMYtENsT',
           ),
           1 => NULL,
           2 => 
@@ -711,6 +711,25 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/settings-store-roles' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'settings-roles-store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -1628,7 +1647,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::MJUDkLFTD0rmpgJL' => 
+    'generated::f71cgZVCrMYtENsT' => 
     array (
       'methods' => 
       array (
@@ -1650,7 +1669,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::MJUDkLFTD0rmpgJL',
+        'as' => 'generated::f71cgZVCrMYtENsT',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2411,6 +2430,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'settings-roles',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'settings-roles-store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/settings-store-roles',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\SettingsController@storeRole',
+        'controller' => 'App\\Http\\Controllers\\SettingsController@storeRole',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'settings-roles-store',
       ),
       'fallback' => false,
       'defaults' => 

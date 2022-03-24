@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class SettingsController extends Controller
 {
@@ -16,9 +18,37 @@ class SettingsController extends Controller
      //Settings roles
      public function settings_roles()
      {
+        $i=0;
+        $roles = Role::orderBy('id','DESC')->paginate(5);
+
+        $rolesID = Role::all();
+
+        
+        $permission = Permission::get();
+
+        $rolePermissions = Permission::join("role_has_permissions","role_has_permissions.permission_id","=","permissions.id")
+            ->where("role_has_permissions.role_id",2)
+            ->get();
+        
          $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Account Settings"], ['name' => "Connections"]];
-         return view('/content/apps/settings/settings-roles', ['breadcrumbs' => $breadcrumbs]);
+         return view('/content/apps/settings/settings-roles', ['breadcrumbs' => $breadcrumbs], compact('roles','i', 'rolePermissions','permission'));
      }
+
+     public function storeRole(Request $request)
+    {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'permission' => 'required',
+        ]);
+        
+        $role = Role::create(['name' => $request->input('name')]);
+        $role->syncPermissions($request->input('permission'));
+    
+        
+        return redirect()->back()
+                        ->with('success','Cargo criado com sucesso');
+    }
 
     // Account Settings security
     public function account_settings_security()
