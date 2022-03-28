@@ -39,7 +39,7 @@ class RolePermissionBootstrap extends Command
  public function handle()
     {
 
-        $roles = ["SuperAdmin", "Administrator","Contabilidade","Comercial", "Piquete", "Tecnologias", "RH"];
+        $roles = ["SuperAdmin", "Administrator","Contabilidade","Comercial", "Piquete", "Tecnologias", "RH", "Oficinas"];
 
         $permissions = [
             "Manage All",
