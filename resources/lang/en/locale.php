@@ -195,5 +195,11 @@ return [
     "Roles" => "Roles",
     "Permission" => "Permission",
     "Cover" => "Cover",
+    "Bookings Management"=>"Bookings Management",
+    "fuel supply management"=>"fuel supply management",
+    "fuel supply"=>"fuel supply",
+    "New Supply Order"=>"New Supply Order",
+    "Gas pump"=>"Gas pump",
+    "Fuel Supplies"=>"Fuel Supplies",
     "message" => "Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops."
 ];

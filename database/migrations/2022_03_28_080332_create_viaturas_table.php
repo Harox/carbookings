@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\combustivel;
 use App\Models\marca;
 use App\Models\modelo;
 use Illuminate\Database\Migrations\Migration;
@@ -32,6 +33,7 @@ class CreateViaturasTable extends Migration
             $table->string('kilometragem')->nullable();
             $table->foreignIdFor(marca::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(modelo::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(combustivel::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->unsignedBigInteger('createdBy');
             $table->foreign('createdBy')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('updatedBy');

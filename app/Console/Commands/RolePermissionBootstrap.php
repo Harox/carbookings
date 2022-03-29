@@ -92,6 +92,14 @@ class RolePermissionBootstrap extends Command
 
         $superAdminRole = Role::where('name', "SuperAdmin")->first();
 
+        // $user = User::create([
+        //     'name' => 'Leonel A.Chihale',
+        //     'email' => 'supportdesk@pfuxela.co.mz',
+        //     'email_verified_at'=>now(),
+        //     'is_active'=>1,
+        //     'password' => bcrypt('admin@support')
+        // ]);
+
         $superUser = User::where('is_active',true)->first();
         $superUser->assignRole($superAdminRole);
 
