@@ -17,7 +17,70 @@
 @endsection
 
 @section('content')
-
+<section class="content">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <h3 class="fw-bolder mb-75">59</h3>
+                <span>Total de abastecimentos</span>
+              </div>
+              <div class="avatar bg-light-primary p-50">
+                <span class="avatar-content">
+                  <i class="fas fa-gas-pump"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <h3 class="fw-bolder mb-75">7</h3>
+                <span>Ordens Pendentes</span>
+              </div>
+              <div class="avatar bg-light-danger p-50">
+                <span class="avatar-content">
+                    <i class="fa-solid fa-folders"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <h3 class="fw-bolder mb-75">60</h3>
+                <span>Projectos</span>
+              </div>
+              <div class="avatar bg-light-success p-50">
+                <span class="avatar-content">
+                  <i data-feather="user-check" class="font-medium-4"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="card">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <h3 class="fw-bolder mb-75">237</h3>
+                <span>Ordens cancelados</span>
+              </div>
+              <div class="avatar bg-light-warning p-50">
+                <span class="avatar-content">
+                  <i class="fa-solid fa-user"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
 @endsection
 @section('vendor-script')
   {{-- Vendor js files --}}
