@@ -1,11 +1,15 @@
-/*=========================================================================================
-  File Name: app.js
-  Description: Template related app JS.
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: hhttp://www.themeforest.net/user/pixinvent
-==========================================================================================*/
+import { createApp } from 'vue'
+
+import axios from "axios";
+import VueAxios from "vue-axios";
+import '@fortawesome/fontawesome-free/js/all.js'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import { Form, Errors } from "vform";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
+
 window.colors = {
   solid: {
     primary: '#7367F0',
