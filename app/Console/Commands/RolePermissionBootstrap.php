@@ -39,7 +39,7 @@ class RolePermissionBootstrap extends Command
  public function handle()
     {
 
-        $roles = ["SuperAdmin", "Administrator","Contabilidade","Comercial", "Piquete", "Tecnologias", "RH"];
+        $roles = ["SuperAdmin", "Administrator","Contabilidade","Comercial", "Piquete", "Tecnologias", "RH", "Oficinas"];
 
         $permissions = [
             "Manage All",
@@ -91,6 +91,14 @@ class RolePermissionBootstrap extends Command
         $this->line('------------- Setting Up Permissions:');
 
         $superAdminRole = Role::where('name', "SuperAdmin")->first();
+
+        // $user = User::create([
+        //     'name' => 'Leonel A.Chihale',
+        //     'email' => 'supportdesk@pfuxela.co.mz',
+        //     'email_verified_at'=>now(),
+        //     'is_active'=>1,
+        //     'password' => bcrypt('admin@support')
+        // ]);
 
         $superUser = User::where('is_active',true)->first();
         $superUser->assignRole($superAdminRole);

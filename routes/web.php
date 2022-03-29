@@ -107,6 +107,28 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //Reports Routes
     Route::get('reports/list', [ReportsController::class, 'report_list'])->name('report-list');
 
+    // Geastao de abastecimentos
+
+    Route::get('/Abastecimentos/Bombas', function(){
+        return view('content.apps.Abastecimentos.Bombas.index');
+    })->name('bombas_abastecimento');
+
+    Route::get('/Abastecimentos/viaturas', function(){
+        return view('content.apps.Abastecimentos.Viaturas.index');
+    })->name('viaturas');
+
+    Route::get('/Abastecimentos', function(){
+        return view('content.apps.Abastecimentos.Relatorio_abastecimento.index');
+    })->name('Abastecimentos');
+
+    Route::get('/Abastecimentos/novo-abastecimento', function(){
+        return view('content.apps.Abastecimentos.Novo_abastecimento.index');
+    })->name('novo-abastecimento');
+
+    Route::get('/Abastecimentos/Ordens-abastecimentos', function(){
+        return view('content.apps.Abastecimentos.Pedidos_abastecimentos.relatorios');
+    })->name('Ordens-abastecimento');
+
 });
 
 

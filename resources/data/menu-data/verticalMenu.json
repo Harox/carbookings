@@ -1,82 +1,119 @@
 {
-  "menu": [
-    {
-      "name": "Dashboard",
-      "icon": "home",
-      "url": "/admin",
-      "slug": "dashboard"
-    },
-
-    {
-      "navheader": "Menu",
-      "slug": ""
-    },
-    {
-      "name": "Bookings",
-      "icon": "star",
-      "url": "admin/bookings/list",
-      "slug": "booking-list"
-    },
-    {
-      "name": "Quote",
-      "icon": "file-text",
-      "slug": "",
-      "submenu": [
+    "menu": [
         {
-          "url": "admin/quote/add",
-          "name": "create",
-          "icon": "circle",
-          "slug": "quote-add"
+            "name": "Dashboard",
+            "icon": "home",
+            "url": "/admin",
+            "slug": "dashboard"
         },
         {
-          "url": "admin/quote/list",
-          "name": "Lista",
-          "icon": "circle",
-          "slug": "quote-list"
+            "navheader": "Menu",
+            "slug": ""
+        },
+        {
+            "name": "fuel supply management",
+            "icon": "truck",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Fuel Supplies",
+                    "icon": "folder",
+                    "url": "/admin/Abastecimentos",
+                    "slug": "Abastecimentos"
+                },
+                {
+                    "name": "New Supply Order",
+                    "icon": "folder-plus",
+                    "url": "/admin/Abastecimentos/novo-abastecimento",
+                    "slug": "novo-abastecimento"
+                },
+                {
+                    "name": "Gas pump",
+                    "icon": "file-text",
+                    "url": "admin/Abastecimentos/Bombas",
+                    "slug": "bombas_abastecimento"
+                },
+                {
+                    "name": "Cars",
+                    "icon": "truck",
+                    "url": "admin/Abastecimentos/viaturas",
+                    "slug": "viaturas"
+                }
+            ]
+        },
+        {
+            "name": "Bookings Management",
+            "icon": "sidebar",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Bookings",
+                    "icon": "star",
+                    "url": "admin/bookings/list",
+                    "slug": "booking-list"
+                },
+                {
+                    "name": "Quote",
+                    "icon": "file-text",
+                    "slug": "",
+                    "submenu": [
+                        {
+                            "url": "admin/quote/add",
+                            "name": "create",
+                            "icon": "circle",
+                            "slug": "quote-add"
+                        },
+                        {
+                            "url": "admin/quote/list",
+                            "name": "Lista",
+                            "icon": "circle",
+                            "slug": "quote-list"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cars",
+                    "icon": "truck",
+                    "url": "admin/cars/list",
+                    "slug": "cars-list"
+                },
+                {
+                    "name": "Drivers",
+                    "icon": "slack",
+                    "url": "admin/drivers/list",
+                    "slug": "driver-list"
+                },
+                {
+                    "name": "Customers",
+                    "icon": "command",
+                    "url": "admin/customers/list",
+                    "slug": "customers-list"
+                },
+                {
+                    "name": "Users",
+                    "icon": "user",
+                    "url": "admin/user/list",
+                    "slug": "app-user-list"
+                },
+                {
+                    "name": "Transactions",
+                    "icon": "code",
+                    "url": "admin/transactions/list",
+                    "slug": "transaction-list"
+                },
+                {
+                    "name": "Reports",
+                    "icon": "clipboard",
+                    "url": "admin/reports/list",
+                    "slug": "report-list"
+                }
+            ]
+        },
+        {
+            "name": "Settings",
+            "icon": "settings",
+            "url": "admin/account-settings-account",
+            "slug": "account-settings-account"
         }
-      ]
-    },
-    {
-      "name": "Cars",
-      "icon": "truck",
-      "url": "admin/cars/list",
-      "slug": "cars-list"
-    },
-    {
-      "name": "Drivers",
-      "icon": "slack",
-      "url": "admin/drivers/list",
-      "slug": "driver-list"
-    },
-    {
-      "name": "Customers",
-      "icon": "command",
-      "url": "admin/customers/list",
-      "slug": "customers-list"
-    },
-    {
-      "name": "Users",
-      "icon": "user",
-      "url": "admin/user/list",
-      "slug": "app-user-list"
-    },
-    {
-      "name": "Transactions",
-      "icon": "code",
-      "url": "admin/transactions/list",
-      "slug": "transaction-list"
-    },
-    {
-      "name": "Reports",
-      "icon": "clipboard",
-      "url": "admin/reports/list",
-      "slug": "report-list"
-    },
-    {
-      "name": "Settings",
-      "icon": "settings",
-      "url": "admin/account-settings-account",
-      "slug": "account-settings-account"
-    }
-  ]
+    ]
 }
