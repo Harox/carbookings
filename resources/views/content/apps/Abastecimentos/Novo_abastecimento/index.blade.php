@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Lista de Bombas de abastecimento')
+@section('title', 'Novo abastecimento')
 
 @section('vendor-style')
   {{-- Page Css files --}}
@@ -17,7 +17,9 @@
 @endsection
 
 @section('content')
-
+<div class="card" id="app">
+    <new_abastecimento></new_abastecimento>
+</div>
 @endsection
 @section('vendor-script')
   {{-- Vendor js files --}}

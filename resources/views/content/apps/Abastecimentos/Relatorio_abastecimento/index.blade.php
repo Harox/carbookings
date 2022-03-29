@@ -80,35 +80,8 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body border-bottom">
-                <h4 class="card-title">Pesquisar e filtrar</h4>
-                <div class="row">
-                    <div class="col-md-4 "></div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"></div>
-                </div>
-            </div>
-            <div class="card-datatable table-responsive pt-0">
-                <table class="table table-bordered table-stripped" id="datatable">
-                    <thead class="table-light">
-                        <tr>
-                            <th></th>
-                            <th>Refs</th>
-                            <th>Data</th>
-                            <th>Abst/anterior</th>
-                            <th>&uacute;ltimo abst</th>
-                            <th>Orden &numero;</th>
-                            <th>Viatura</th>
-                            <th>Bomba</th>
-                            <th>Estado</th>
-                            <th>Ac&ccedil;&atilde;o</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-
-            <!-- Modal to add new user Ends-->
+        <div class="card" id="app">
+            <abastecimentos></abastecimentos>
         </div>
     </section>
 @endsection
@@ -133,7 +106,7 @@
 
 @section('page-script')
     {{-- Page js files --}}
-    <script src="{{ asset(mix('js/scripts/forms/pickers/form-pickers.js')) }}"></script>
+    {{-- <script src="{{ asset(mix('js/scripts/forms/pickers/form-pickers.js')) }}"></script> --}}
     <script src="{{ asset(mix('js/scripts/forms/form-wizard.js')) }}"></script>
     <script src="{{ asset(mix('js/scripts/pages/app-booking-list.js')) }}"></script>
 @endsection
