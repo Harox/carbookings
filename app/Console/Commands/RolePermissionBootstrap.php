@@ -96,7 +96,7 @@ class RolePermissionBootstrap extends Command
         //     'name' => 'Leonel A.Chihale',
         //     'email' => 'supportdesk@pfuxela.co.mz',
         //     'email_verified_at'=>now(),
-        //     'is_active'=>1,
+        //     'is_active'=>'1',
         //     'password' => bcrypt('admin@support')
         // ]);
 

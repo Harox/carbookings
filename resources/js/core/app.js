@@ -1,11 +1,19 @@
-/*=========================================================================================
-  File Name: app.js
-  Description: Template related app JS.
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: hhttp://www.themeforest.net/user/pixinvent
-==========================================================================================*/
+import { createApp } from 'vue'
+
+import axios from "axios";
+import VueAxios from "vue-axios";
+import '@fortawesome/free-brands-svg-icons/attribution'
+import '@fortawesome/fontawesome-free/js/all.js'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import VueSweetalert2 from 'vue-sweetalert2';
+import { Form, Errors } from "vform";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+import App from './App.vue'
+// import BootstrapVue3 from "bootstrap-vue-3";
+import VueProgressBar from "@aacassandra/vue3-progressbar";
+import router from "./modules/routes/index";
+
 window.colors = {
   solid: {
     primary: '#7367F0',
@@ -1087,27 +1095,43 @@ if (typeof jQuery.validator === 'function') {
   });
 }
 
-// Add validation class to input-group (input group validation fix, currently disabled but will be useful in future)
-/* function inputGroupValidation(el) {
-  var validEl,
-    invalidEl,
-    elem = $(el);
+const opt = {
+    color: "#bffaf3",
+    failedColor: "#874b4b",
+    thickness: "5px",
+    transition: {
+      speed: "0.2s",
+      opacity: "0.6s",
+      termination: 300,
+    },
+    autoRevert: true,
+    location: "left",
+    inverse: false,
+  };
 
-  if (elem.hasClass('form-control')) {
-    if ($(elem).is('.form-control:valid, .form-control.is-valid')) {
-      validEl = elem;
-    }
-    if ($(elem).is('.form-control:invalid, .form-control.is-invalid')) {
-      invalidEl = elem;
-    }
-  } else {
-    validEl = elem.find('.form-control:valid, .form-control.is-valid');
-    invalidEl = elem.find('.form-control:invalid, .form-control.is-invalid');
-  }
-  if (validEl !== undefined) {
-    validEl.closest('.input-group').removeClass('.is-valid is-invalid').addClass('is-valid');
-  }
-  if (invalidEl !== undefined) {
-    invalidEl.closest('.input-group').removeClass('.is-valid is-invalid').addClass('is-invalid');
-  }
-} */
+ const app = createApp(App);
+ app.component(Errors.name, Errors)
+ app.use(vSelect)
+ app.use(VueAxios, axios);
+//  app.use(BootstrapVue3)
+ app.component("v-select", vSelect);
+ app.use(VueProgressBar,opt)
+
+ const Toast = {
+    confirmButtonColor: "#41b882",
+    cancelButtonColor: "#ff7674",
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    onOpen: (toast) => {
+        toast.addEventListener("mouseenter");
+        toast.addEventListener("mouseleave");
+    },
+};
+window.toast = Toast;
+window.Fire = createApp({});
+
+  app.use(VueSweetalert2, Toast);
+app.use(router).mount("#app");
